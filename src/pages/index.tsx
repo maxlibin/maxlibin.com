@@ -10,7 +10,7 @@ import Books from "../components/books"
 
 const title = "@maxlibin"
 const description =
-  "I am based in Singapore, have Javascript, React, ReasonMl, Rescript, ReasonReact, RescriptReact projects you'd like to discuss?"
+  "I am based in Singapore, have Javascript, React, ReasonMl, Rescript, ReasonReact, RescriptReact, ai, vibe coding projects you'd like to discuss?"
 
 const colorTheme = {
   level0: "#f5eaea",
