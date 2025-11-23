@@ -40,6 +40,7 @@ h4 {
 .post ul {
   list-style: square;
 }
+
 .post ol {
   list-style: decimal;
 }
@@ -54,6 +55,23 @@ h4 {
   word-wrap: break-word;
 }
 
+.post table {
+  @apply w-full border-collapse mb-6;
+}
+
+.post th,
+.post td {
+  @apply border border-gray-300 dark:border-gray-700 p-2;
+}
+
+.post th {
+  @apply font-bold text-left bg-gray-100 dark:bg-gray-800;
+}
+
+.post blockquote {
+  @apply border-l-4 border-gray-300 dark:border-gray-700 pl-4 italic my-6;
+}
+
 .post a {
   color: rgb(99 102 241);
 }
@@ -61,11 +79,20 @@ h4 {
 .post a:hover {
   color: rgb(67 56 202);
 }
+
 .post h2 {
   font-size: 28px;
   line-height: normal;
   margin-bottom: 20px;
   margin-top: 40px;
+}
+
+.post h3 {
+  @apply text-2xl font-bold mt-8 mb-4;
+}
+
+.post h4 {
+  @apply text-xl font-bold mt-6 mb-3;
 }
 
 .gatsby-image-wrapper-constrained {
@@ -84,13 +111,7 @@ h4 {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgb(66, 57, 157);
-  background: linear-gradient(
-    153deg,
-    rgba(66, 57, 157, 1) 0%,
-    rgba(7, 190, 27, 1) 47%,
-    rgba(210, 0, 230, 1) 100%
-  );
+  @apply bg-black dark:bg-white;
   border: 1px solid #000;
   border-radius: 8px;
 }
@@ -98,7 +119,12 @@ h4 {
 p code,
 li code {
   background: #373576;
+  color: white;
   padding: 2px 8px;
   border-radius: 4px;
   border: 1px solid #01040a;
+}
+
+.post hr {
+  @apply my-8 border-gray-300 dark:border-gray-700;
 }

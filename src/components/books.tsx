@@ -133,16 +133,12 @@ const Books = () => {
                     href={selectedBook.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-block px-4 py-2 mb-4 text-white rounded-lg transition-colors duration-200"
-                    style={{
-                      background:
-                        "linear-gradient(153deg, rgba(66, 57, 157, 1) 0%, rgba(7, 190, 27, 1) 47%, rgba(210, 0, 230, 1) 100%)",
-                    }}
+                    className="inline-block px-4 py-2 mb-4 bg-black dark:bg-white text-white dark:text-black rounded-lg transition-colors duration-200"
                   >
                     Check out this book on Amazon
                   </a>
                 )}
-                )}
+
                 <div className="space-y-4">
                   <p className="text-gray-700 dark:text-gray-300 whitespace-pre-line">
                     {selectedBook.description}
