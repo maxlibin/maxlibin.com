@@ -6,7 +6,7 @@ import SyntaxHighlighter from "react-syntax-highlighter"
 import { anOldHope } from "react-syntax-highlighter/dist/esm/styles/hljs"
 
 import Layout from "../components/layout"
-import Books from "../components/books"
+import Projects from "../components/projects"
 
 type node = {
   content: string
@@ -90,7 +90,7 @@ const BlogPost = ({ data }: post) => {
         <div className="mt-8 text-gray-900 dark:text-gray-300 text-xl md:max-w-4xl">
           {parser(content)}
         </div>
-        <Books />
+        <Projects />
         <div className="mt-8 text-gray-900 dark:text-gray-300 text-xl md:max-w-4xl">
           <div className="giscus" />
         </div>

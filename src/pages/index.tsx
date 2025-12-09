@@ -6,7 +6,7 @@ import Layout from "../components/layout"
 import  SEO  from "../components/seo"
 import LatestPosts from "../components/latestPosts"
 import GithubRepo from "../components/githubRepos"
-import Books from "../components/books"
+import Projects from "../components/projects"
 
 const title = "@maxlibin"
 const description =
@@ -38,7 +38,7 @@ const Index = ({ data }) => {
             theme={colorTheme}
           />
         </div>
-        <Books />
+        <Projects />
       </div>
     </Layout>
   )

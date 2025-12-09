@@ -2,7 +2,7 @@ import React from "react"
 
 import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
-import Books from "../components/books"
+import Projects from "../components/projects"
 import SEO from "../components/seo"
 
 interface node {
@@ -46,7 +46,7 @@ const Blog = ({ data }: post) => {
           </div>
         ))}
       </div>
-      <Books />
+      <Projects />
     </Layout>
   )
 }
