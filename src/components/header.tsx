@@ -12,6 +12,7 @@ type link = {
 const links: Array<link> = [
   {label: "Home", href: "/"},
   {label: "Blog", href: "/blog"},
+  {label: "Side Projects", href: "/side-project-to-glory"},
 ]
 
 const Header = () =>
@@ -19,8 +20,14 @@ const Header = () =>
     <ul className="flex space-x-4">
       {
         links.map(({href, label}) => (
-          <li key={label} className="text-gray hover:text-indigo-800 dark:text-white dark:hover:text-indigo-500">
-            <Link to={href}> {label} </Link>
+          <li key={label}>
+            <Link 
+              to={href}
+              className="text-gray-600 dark:text-gray-300 hover:text-indigo-800 dark:hover:text-indigo-500 transition-colors"
+              activeClassName="!text-indigo-600 dark:!text-indigo-400 font-bold"
+            > 
+              {label} 
+            </Link>
           </li>
         ))
       }
