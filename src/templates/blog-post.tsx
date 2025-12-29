@@ -27,13 +27,28 @@ type post = {
   }
 }
 
+const decodeEntities = (text: string) => {
+  return text
+    .replace(/&quot;/g, '"')
+    .replace(/&amp;/g, "&")
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">")
+    .replace(/&#39;/g, "'")
+    .replace(/&rsquo;/g, "'")
+    .replace(/&lsquo;/g, "'")
+    .replace(/&ldquo;/g, '"')
+    .replace(/&rdquo;/g, '"')
+}
+
 const getHeadings = (content: string) => {
   const headings: Array<{ id: string; text: string; level: number }> = []
   const headingRegex = /<(h[2-3])(.*?)>(.*?)<\/h[2-3]>/gi
   let match
   while ((match = headingRegex.exec(content)) !== null) {
     const level = parseInt(match[1][1])
-    const text = match[3].replace(/<[^>]*>?/gm, "")
+    let text = match[3].replace(/<[^>]*>?/gm, "")
+    text = decodeEntities(text)
+
     const id = text
       .toLowerCase()
       .replace(/[^\w\s-]/g, "")
@@ -119,7 +134,9 @@ const BlogPost = ({ data }: post) => {
     })
 
   const headings = getHeadings(content)
-  const plainExcerpt = excerpt.replace(/<[^>]*>?/gm, "").slice(0, 160)
+  const plainExcerpt = decodeEntities(
+    excerpt.replace(/<[^>]*>?/gm, "").slice(0, 160)
+  )
 
   return (
     <Layout>
@@ -133,12 +150,14 @@ const BlogPost = ({ data }: post) => {
           </h1>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mt-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mt-0">
+          {" "}
+          {/* Reduced mt-4 to mt-0 */}
           {/* Main Content */}
           <div className="lg:col-span-8">
             {/* GEO Optimized: Key Takeaways / Summary */}
             <div className="bg-indigo-50 dark:bg-indigo-900/20 border-l-4 border-indigo-500 p-6 mb-12 rounded-r-lg">
-              <h2 className="text-xl font-bold text-indigo-900 dark:text-indigo-300 mb-3 mt-0">
+              <h2 className="text-xl font-bold text-indigo-900 dark:text-indigo-300 mb-3 !mt-0">
                 Key Takeaways
               </h2>
               <div className="text-gray-700 dark:text-gray-300 italic text-lg">
@@ -150,24 +169,39 @@ const BlogPost = ({ data }: post) => {
               {parser(content)}
             </div>
           </div>
-
           {/* Sidebar with Table of Contents */}
           <aside className="lg:col-span-4 hidden lg:block">
-            <div className="sticky top-8 border border-gray-100 dark:border-gray-800 p-6 rounded-xl bg-gray-50 dark:bg-gray-900/50">
-              <h2 className="text-sm font-bold uppercase tracking-widest text-gray-500 dark:text-gray-400 mb-4 mt-0">
+            <div className="sticky top-8 p-6 pt-5 rounded-2xl bg-white dark:bg-gray-900/40 backdrop-blur-sm shadow-sm transition-all hover:shadow-md">
+              <div className="text-[11px] font-black uppercase tracking-[2px] text-indigo-500 dark:text-indigo-400 mb-5 mt-0">
                 Table of Contents
-              </h2>
+              </div>
               <nav aria-label="Table of contents">
-                <ul className="space-y-3 text-sm">
+                <ul className="toc-list space-y-3">
+                  {" "}
+                  {/* Added toc-list class and reduced space-y-4 to space-y-3 */}
                   {headings.map((h, i) => (
                     <li
                       key={i}
-                      style={{ paddingLeft: `${(h.level - 2) * 1.5}rem` }}
+                      className="group"
+                      style={{ marginLeft: `${(h.level - 2) * 1}rem` }}
                     >
+                      {" "}
+                      {/* Reduced indent from 1.25rem to 1rem */}
                       <a
                         href={`#${h.id}`}
-                        className="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+                        className={`
+                          block text-sm leading-snug transition-all duration-200
+                          ${
+                            h.level === 2
+                              ? "font-semibold text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-white"
+                              : "text-gray-500 dark:text-gray-500 hover:text-indigo-600 dark:hover:text-gray-200"
+                          }
+                          relative pl-3 border-l border-gray-200 dark:border-gray-800 
+                          group-hover:border-indigo-500 dark:group-hover:border-indigo-400
+                        `}
                       >
+                        {" "}
+                        {/* Reduced padding-left from pl-4 to pl-3 */}
                         {h.text}
                       </a>
                     </li>

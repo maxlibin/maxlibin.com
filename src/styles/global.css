@@ -41,6 +41,11 @@ h4 {
   list-style: square;
 }
 
+.post .toc-list {
+  list-style: none !important;
+  margin: 0 !important;
+}
+
 .post ol {
   list-style: decimal;
 }
