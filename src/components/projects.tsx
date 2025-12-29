@@ -36,7 +36,8 @@ const projects = [
     MyPhotoAI lets you turn words into art in seconds. Explore 50+ styles, remix photos, and create gallery-worthy images with the power of AI. Whether you're a designer, content creator, or just exploring your imagination, MyPhotoAI makes visual creation effortless.`,
     coverUrl: myPhotoAI,
     category: "Photography",
-    url: "https://apps.apple.com/sg/app/myphotoai-ai-photo-generator/id6748759925",
+    url:
+      "https://apps.apple.com/sg/app/myphotoai-ai-photo-generator/id6748759925",
   },
   {
     id: 3,
@@ -56,9 +57,26 @@ const Projects = () => {
 
   return (
     <div className="w-full mt-8">
+      {/* Dynamic Schema for the selected project (SEO/GEO) */}
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "SoftwareApplication",
+          name: selectedProject.title,
+          description: selectedProject.description.split("\n")[0],
+          applicationCategory: selectedProject.category,
+          operatingSystem: selectedProject.platform === "iOS" ? "iOS" : "Web",
+          url: selectedProject.url,
+          author: {
+            "@type": "Person",
+            name: "Max Li Bin",
+          },
+        })}
+      </script>
+
       <div className="py-6 border-b border-gray-200 dark:border-gray-800">
         <h2 className="text-3xl font-bold text-gray-900 dark:text-white text-left">
-          Recent Side Projects
+          Vibe Code to Glory - Side Projects 2026
         </h2>
       </div>
       <div className="py-6">
@@ -110,7 +128,7 @@ const Projects = () => {
                   <div className="w-full h-32 mb-4 overflow-hidden rounded-md">
                     <img
                       src={project.coverUrl}
-                      alt={`Cover of ${project.title}`}
+                      alt={`${project.title} - ${project.category} ${project.platform} application by Max Li Bin`}
                       className="w-full h-full object-cover"
                     />
                   </div>
@@ -133,4 +151,3 @@ const Projects = () => {
 }
 
 export default Projects
-

@@ -1,5 +1,5 @@
 import React from "react"
-import {Link} from "gatsby"
+import { Link } from "gatsby"
 
 import Social from "./social"
 import ThemeToggle from "./toggler"
@@ -10,32 +10,33 @@ type link = {
 }
 
 const links: Array<link> = [
-  {label: "Home", href: "/"},
-  {label: "Blog", href: "/blog"},
-  {label: "Side Projects", href: "/side-project-to-glory"},
+  { label: "Home", href: "/" },
+  { label: "Blog", href: "/blog" },
+  { label: "Vibe Code to Glory", href: "/side-project-to-glory" },
 ]
 
-const Header = () =>
-  <div className="py-4 flex items-center mb-4">
-    <ul className="flex space-x-4">
-      {
-        links.map(({href, label}) => (
+const Header = () => (
+  <header className="py-4 flex items-center mb-4">
+    <nav aria-label="Main navigation">
+      <ul className="flex space-x-4">
+        {links.map(({ href, label }) => (
           <li key={label}>
-            <Link 
+            <Link
               to={href}
               className="text-gray-600 dark:text-gray-300 hover:text-indigo-800 dark:hover:text-indigo-500 transition-colors"
               activeClassName="!text-indigo-600 dark:!text-indigo-400 font-bold"
-            > 
-              {label} 
+            >
+              {label}
             </Link>
           </li>
-        ))
-      }
-    </ul>
+        ))}
+      </ul>
+    </nav>
     <div className="ml-auto flex space-x-4 items-center">
       <Social />
       <ThemeToggle />
     </div>
-  </div>
+  </header>
+)
 
-export default Header;
+export default Header

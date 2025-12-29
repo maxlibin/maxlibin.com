@@ -2,14 +2,13 @@ import React from "react"
 
 import Header from "./header"
 
-const Layout = ({children}) =>
+const Layout = ({ children }) => (
   <div className="h-full overflow-auto bg-white dark:bg-gray-900 px-4">
     <div className="container max-w-6xl mx-auto flex flex-col h-full">
       <Header />
-      <div className="pb-8">
-        {children}
-      </div>
+      <main className="pb-8">{children}</main>
     </div>
   </div>
+)
 
-export default Layout;
+export default Layout

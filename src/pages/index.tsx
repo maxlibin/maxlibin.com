@@ -3,14 +3,17 @@ import { graphql } from "gatsby"
 import GitHubCalendar from "react-github-calendar"
 
 import Layout from "../components/layout"
-import  SEO  from "../components/seo"
+import SEO from "../components/seo"
 import LatestPosts from "../components/latestPosts"
 import GithubRepo from "../components/githubRepos"
 import Projects from "../components/projects"
 
 const title = "@maxlibin"
 const description =
-  "I am based in Singapore, have Javascript, React, ReasonMl, Rescript, ReasonReact, RescriptReact, ai, vibe coding projects you'd like to discuss?"
+  "Software Developer & Vibe Coder based in Singapore. Currently building 24 revenue-generating apps in 12 months. Let's talk about React, TypeScript, AI, and Vibe Coding."
+
+const keywords =
+  "vibe coding, software developer, singapore, react, typescript, ai, indie maker, 24 apps challenge, max li bin"
 
 const colorTheme = {
   level0: "#f5eaea",
@@ -67,4 +70,4 @@ export const pageQuery = graphql`
 
 export default Index
 
-export const Head = () => <SEO />
+export const Head = () => <SEO description={description} keywords={keywords} />

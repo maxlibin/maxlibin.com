@@ -63,7 +63,14 @@ public
 
 # Yarn
 yarn-error.log
-.pnp/
-.pnp.js
-# Yarn Integrity file
-.yarn-integrity
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+.yarn/install-state.gz
+
+# Optional: if you are not using Zero-Installs, uncomment the line below
+.yarn/cache

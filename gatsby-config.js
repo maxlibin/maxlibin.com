@@ -1,14 +1,15 @@
 module.exports = {
   siteMetadata: {
-    title: `Max li bin - Frontend developer`,
-    description: `I am based in Singapore, have Javascript, React, ReasonMl, ReasonReact projects you'd like to discuss?`,
+    title: `Max Li Bin - Software Developer & Vibe Coder`,
+    description: `Independent software developer based in Singapore specializing in React, TypeScript, and AI-powered applications. Chronicling my "Vibe Code to Glory" journey: building 24 apps in 12 months.`,
     twitterUsername: `@maxlibin`,
-    author: `@maxlibin`,
-    image: `data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🤔</text></svg>`,
+    author: `Max Li Bin`,
+    image: `/icons/icon-512x512.png`, // Use a real image instead of data URI
     siteUrl: `https://maxlibin.com`,
   },
   plugins: [
     "gatsby-plugin-postcss",
+    "gatsby-plugin-image",
     {
       resolve: `gatsby-source-wordpress`,
       options: {
@@ -28,13 +29,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `maxlibin.com`,
+        name: `Max Li Bin - Software Developer`,
         short_name: `maxlibin`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#111827`,
+        theme_color: `#6366f1`,
         display: `minimal-ui`,
-        icon: `src/assets/images/favicon-32x32.png`, // This path is relative to the root of the site.
+        icon: `src/assets/images/favicon-32x32.png`,
       },
     },
     {
@@ -43,13 +44,52 @@ module.exports = {
         trackingIds: ["G-G0B3GHYF90"],
       },
     },
-    "gatsby-plugin-sitemap",
+    {
+      resolve: "gatsby-plugin-sitemap",
+      options: {
+        query: `
+          {
+            allSitePage {
+              nodes {
+                path
+              }
+            }
+            allWpPost {
+              nodes {
+                slug
+                lastmod: modified
+              }
+            }
+          }
+        `,
+        resolvePages: ({ allSitePage, allWpPost }) => {
+          const wpNodeMap = allWpPost.nodes.reduce((acc, node) => {
+            // WordPress slugs in Gatsby are usually just the slug,
+            // but the page path is /slug/
+            acc[`/${node.slug}/`] = node
+            return acc
+          }, {})
+
+          return allSitePage.nodes.map(page => {
+            return { ...page, ...wpNodeMap[page.path] }
+          })
+        },
+        serialize: ({ path, lastmod }) => {
+          return {
+            url: path,
+            lastmod,
+            changefreq: path === "/" ? "daily" : "weekly",
+            priority: path === "/" ? 1.0 : 0.7,
+          }
+        },
+      },
+    },
     {
       resolve: "gatsby-plugin-robots-txt",
       options: {
-        host: "https://www.maxlibin.com",
-        sitemap: "https://www.maxlibin.com/sitemap-index.xml",
-        policy: [{ userAgent: "*", disallow: "" }],
+        host: "https://maxlibin.com",
+        sitemap: "https://maxlibin.com/sitemap-index.xml",
+        policy: [{ userAgent: "*", allow: "/" }],
       },
     },
   ],

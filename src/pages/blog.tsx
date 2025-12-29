@@ -66,4 +66,14 @@ export const pageQuery = graphql`
 
 export default Blog
 
-export const Head = () => <SEO title="Blog | Insights, Tutorials, and Guides for Developers" description="Explore our blog for the latest insights, tutorials, and guides on web development, vibe coding, AI-powered tools, and innovative technologies. Stay updated with expert knowledge and practical tips." />
+export const Head = () => (
+  <SEO
+    title="Blog | Insights, Tutorials, and Guides for Developers"
+    description="Explore our blog for the latest insights, tutorials, and guides on web development, vibe coding, AI-powered tools, and innovative technologies. Stay updated with expert knowledge and practical tips."
+    pathname="/blog"
+    breadcrumbs={[
+      { name: "Home", item: "/" },
+      { name: "Blog", item: "/blog" },
+    ]}
+  />
+)
