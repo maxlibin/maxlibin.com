@@ -12,7 +12,7 @@ type link = {
 const links: Array<link> = [
   { label: "Home", href: "/" },
   { label: "Blog", href: "/blog" },
-  { label: "Vibe Code to Glory", href: "/side-project-to-glory" },
+  { label: "Vibe Code to Glory", href: "/vibe-code-to-glory" },
 ]
 
 const Header = () => (

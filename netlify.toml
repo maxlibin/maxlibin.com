@@ -1,0 +1,5 @@
+[[redirects]]
+  from = "/side-project-to-glory"
+  to = "/vibe-code-to-glory"
+  status = 301
+  force = true
