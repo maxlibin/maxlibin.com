@@ -35,9 +35,13 @@ const decodeEntities = (text: string) => {
     .replace(/&gt;/g, ">")
     .replace(/&#39;/g, "'")
     .replace(/&rsquo;/g, "'")
+    .replace(/&#8217;/g, "'")
+    .replace(/&#8216;/g, "'")
     .replace(/&lsquo;/g, "'")
     .replace(/&ldquo;/g, '"')
     .replace(/&rdquo;/g, '"')
+    .replace(/&#8220;/g, '"')
+    .replace(/&#8221;/g, '"')
 }
 
 const getHeadings = (content: string) => {
