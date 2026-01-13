@@ -27,6 +27,19 @@ const challenges = [
     excerpt: "It’s a specific kind of pain. You’re building a file upload feature. You need to test if your backend correctly rejects a 50MB PDF. You need to see if your frontend handles a corrupted PNG without crashing... Where do you get these files? You scavenge. GetFileMock.com is the solution.",
     technologies: ["OpenAI Codex", "Claude Opus 4.5", "React", "Vite", "Web Workers"],
   },
+  {
+    id: 2,
+    title: "Seekdom.com",
+    platform: "Web",
+    description: "Find the perfect domain with AI. Search, generate, and analyze your next brand with intelligent domain suggestions and instant availability checking.",
+    status: "Shipped",
+    url: "https://seekdom.com",
+    coverUrl: "https://b.maxlibin.com/wp-content/uploads/2026/01/Screenshot-2026-01-13-at-9.18.56 PM.png",
+    revenue: "Pre-Revenue",
+    blogUrl: "",
+    excerpt: "Finding the perfect domain name is often the hardest part of launching a new project. Seekdom uses AI to generate creative, brandable domain names based on your input, instantly checks availability across multiple TLDs, and helps you analyze and compare options to find your ideal digital identity.",
+    technologies: ["OpenAI Codex", "Next.js", "AI/GPT", "Domain APIs"],
+  },
 ]
 
 const TOTAL_SLOTS = 24
