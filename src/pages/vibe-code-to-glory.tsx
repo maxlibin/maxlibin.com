@@ -47,7 +47,7 @@ const challenges = [
     description: "Try on clothes without fitting. Upload a photo, browse any online store, and instantly see yourself wearing any item. Experience the future of shopping with our AI-powered virtual fitting room.",
     status: "Shipped",
     url: "https://www.tryoutwithai.com/",
-    coverUrl: "",
+    coverUrl: "https://b.maxlibin.com/wp-content/uploads/2026/02/how-it-works-step-1.png",
     revenue: "Pre-Revenue",
     blogUrl: "",
     excerpt: "Try on clothes without fitting. Browse any online store and instantly see yourself wearing any item using AI.",
