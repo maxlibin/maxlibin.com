@@ -53,6 +53,19 @@ const challenges = [
     excerpt: "Try on clothes without fitting. Browse any online store and instantly see yourself wearing any item using AI.",
     technologies: ["OpenAI Codex", "Next.js", "Chrome extension", "Cursor", "Claude Code"],
   },
+  {
+    id: 4,
+    title: "aitinerary.ai",
+    platform: "Web",
+    description: "AI travel planning assistant for building personalized itineraries in minutes.",
+    status: "Shipped",
+    url: "https://aitinerary.ai",
+    coverUrl: "https://b.maxlibin.com/wp-content/uploads/2026/03/Screenshot-2026-03-03-at-1.21.19%E2%80%AFAM.png",
+    revenue: "Pre-Revenue",
+    blogUrl: "",
+    excerpt: "aitinerary.ai helps travelers turn ideas into complete trip plans with AI-guided itinerary generation and fast editing.",
+    technologies: ["Codex", "OpenClaw", "Antigravity"],
+  },
 ]
 
 const TOTAL_SLOTS = 24
