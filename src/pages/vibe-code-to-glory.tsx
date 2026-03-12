@@ -66,6 +66,19 @@ const challenges = [
     excerpt: "aitinerary.ai helps travelers turn ideas into complete trip plans with AI-guided itinerary generation and fast editing.",
     technologies: ["Codex", "OpenClaw", "Antigravity"],
   },
+  {
+    id: 5,
+    title: "Tulsk.io",
+    platform: "Web",
+    description: "AI-powered project management and team collaboration platform for planning, prioritizing, and shipping with an AI cofounder.",
+    status: "Shipped",
+    url: "https://tulsk.io",
+    coverUrl: "https://b.maxlibin.com/wp-content/uploads/2026/03/Screenshot-2026-03-12-at-1.49.42\u202fAM.png",
+    revenue: "Pre-Revenue",
+    blogUrl: "",
+    excerpt: "Turn messy ideas into clear plans with 24/7 AI-powered insights and expert support, so ideas become shippable work faster.",
+    technologies: ["Next.js", "OpenAI Codex", "OpenClaw", "Claude Code"],
+  },
 ]
 
 const TOTAL_SLOTS = 24
