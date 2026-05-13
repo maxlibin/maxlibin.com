@@ -79,6 +79,19 @@ const challenges = [
     excerpt: "Turn messy ideas into clear plans with 24/7 AI-powered insights and expert support, so ideas become shippable work faster.",
     technologies: ["Next.js", "OpenAI Codex", "OpenClaw", "Claude Code"],
   },
+  {
+    id: 6,
+    title: "MyPhotoAI",
+    platform: "iOS",
+    description: "AI Photo Generator iOS App. Turn words into art in seconds with 50+ styles, photo remixing, and gallery-worthy AI image creation.",
+    status: "Shipped",
+    url: "https://apps.apple.com/sg/app/myphotoai-ai-photo-generator/id6748759925",
+    coverUrl: "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/ee/bf/e8/eebfe8da-7dda-e4b3-eb80-eac310a5072e/screen1.jpg/230x498bb.webp",
+    revenue: "Pre-Revenue",
+    blogUrl: "",
+    excerpt: "MyPhotoAI lets you turn words into art in seconds. Explore 50+ styles, remix photos, and create gallery-worthy images with the power of AI. Whether you're a designer, content creator, or just exploring your imagination, MyPhotoAI makes visual creation effortless.",
+    technologies: ["Swift", "SwiftUI", "Claude Code", "OpenAI Codex"],
+  },
 ]
 
 const TOTAL_SLOTS = 24
