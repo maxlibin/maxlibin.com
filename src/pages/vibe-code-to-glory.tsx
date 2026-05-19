@@ -92,6 +92,19 @@ const challenges = [
     excerpt: "MyPhotoAI lets you turn words into art in seconds. Explore 50+ styles, remix photos, and create gallery-worthy images with the power of AI. Whether you're a designer, content creator, or just exploring your imagination, MyPhotoAI makes visual creation effortless.",
     technologies: ["Swift", "SwiftUI", "Claude Code", "OpenAI Codex"],
   },
+  {
+    id: 7,
+    title: "Interior AI Room Designer",
+    platform: "iOS",
+    description: "AI-powered interior design app. Snap a photo of any room and instantly reimagine it in dozens of styles, from modern minimalist to cozy boho.",
+    status: "Shipped",
+    url: "https://apps.apple.com/sg/app/interior-ai-room-designer/id6751051147",
+    coverUrl: "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/92/ce/0c/92ce0cf2-7a10-b436-4a03-b0bda1195d84/screen2.png/230x498bb.webp",
+    revenue: "Pre-Revenue",
+    blogUrl: "",
+    excerpt: "Interior AI Room Designer turns any room photo into a beautifully restyled space in seconds. Explore styles, swap furniture vibes, and visualize your next redesign before lifting a finger — perfect for homeowners, renters, and designers chasing inspiration.",
+    technologies: ["Swift", "SwiftUI", "Claude Code", "OpenAI Codex"],
+  },
 ]
 
 const TOTAL_SLOTS = 24
