@@ -105,6 +105,19 @@ const challenges = [
     excerpt: "Interior AI Room Designer turns any room photo into a beautifully restyled space in seconds. Explore styles, swap furniture vibes, and visualize your next redesign before lifting a finger — perfect for homeowners, renters, and designers chasing inspiration.",
     technologies: ["Swift", "SwiftUI", "Claude Code", "OpenAI Codex"],
   },
+  {
+    id: 8,
+    title: "Riggd.ai",
+    platform: "Web",
+    description: "AI-powered platform for creators and builders to launch faster with smart, ready-to-ship workflows.",
+    status: "Shipped",
+    url: "https://riggd.ai",
+    coverUrl: "https://b.maxlibin.com/wp-content/uploads/2026/05/riggd.ai_.jpg",
+    revenue: "Pre-Revenue",
+    blogUrl: "",
+    excerpt: "Riggd.ai helps you go from idea to shipped with AI-rigged workflows that handle the heavy lifting so you can focus on building what matters.",
+    technologies: ["Next.js", "OpenAI Codex", "Claude Code"],
+  },
 ]
 
 const TOTAL_SLOTS = 24
