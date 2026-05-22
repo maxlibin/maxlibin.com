@@ -58,21 +58,24 @@ const Projects = () => {
   return (
     <div className="w-full mt-8">
       {/* Dynamic Schema for the selected project (SEO/GEO) */}
-      <script type="application/ld+json">
-        {JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "SoftwareApplication",
-          name: selectedProject.title,
-          description: selectedProject.description.split("\n")[0],
-          applicationCategory: selectedProject.category,
-          operatingSystem: selectedProject.platform === "iOS" ? "iOS" : "Web",
-          url: selectedProject.url,
-          author: {
-            "@type": "Person",
-            name: "Max Li Bin",
-          },
-        })}
-      </script>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            name: selectedProject.title,
+            description: selectedProject.description.split("\n")[0],
+            applicationCategory: selectedProject.category,
+            operatingSystem: selectedProject.platform === "iOS" ? "iOS" : "Web",
+            url: selectedProject.url,
+            author: {
+              "@type": "Person",
+              name: "Max Li Bin",
+            },
+          }),
+        }}
+      />
 
       <div className="py-6 border-b border-gray-200 dark:border-gray-800">
         <h2 className="text-3xl font-bold text-gray-900 dark:text-white text-left">

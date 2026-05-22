@@ -161,9 +161,11 @@ const SEO = ({title, description, keywords, pathname, article, datePublished, da
       <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🤔</text></svg>" />
       
       {schemaOrgJSONLD.map((schema, index) => (
-        <script type="application/ld+json" key={index}>
-          {JSON.stringify(schema)}
-        </script>
+        <script
+          type="application/ld+json"
+          key={index}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
       ))}
 
       {children}
