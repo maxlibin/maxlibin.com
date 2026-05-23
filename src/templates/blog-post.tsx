@@ -267,8 +267,8 @@ export const Head = ({ data }: post) => {
       match[1].toLowerCase().includes("what")
     ) {
       faqs.push({
-        question: match[1].replace(/<[^>]*>?/gm, ""),
-        answer: match[2].replace(/<[^>]*>?/gm, ""),
+        question: decodeEntities(match[1].replace(/<[^>]*>?/gm, "")),
+        answer: decodeEntities(match[2].replace(/<[^>]*>?/gm, "")),
       })
       count++
     }
