@@ -118,6 +118,19 @@ const challenges = [
     excerpt: "Riggd.ai helps you go from idea to shipped with AI-rigged workflows that handle the heavy lifting so you can focus on building what matters.",
     technologies: ["Next.js", "OpenAI Codex", "Claude Code"],
   },
+  {
+    id: 9,
+    title: "HomeworkAI - PSLE Tutor",
+    platform: "iOS",
+    description: "AI homework tutor for PSLE students. Snap a question and get step-by-step explanations across Math, Science, and English.",
+    status: "Shipped",
+    url: "https://apps.apple.com/sg/app/homeworkai-psle-tutor/id6770512063",
+    coverUrl: "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/26/18/33/26183345-e3e8-3a7e-6cd3-d2b80015e0a2/screen1.png/230x498bb.webp",
+    revenue: "Pre-Revenue",
+    blogUrl: "",
+    excerpt: "HomeworkAI turns homework stress into clear, guided learning. Snap a question, get step-by-step explanations, and build real understanding — purpose-built for PSLE students tackling Math, Science, and English.",
+    technologies: ["Swift", "SwiftUI", "Claude Code", "OpenAI Codex"],
+  },
 ]
 
 const TOTAL_SLOTS = 24
