@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
 
-const APP_STORE_URL = "https://apps.apple.com/sg/app/homeworkai/id6753893498"
+const APP_STORE_URL = "https://apps.apple.com/sg/app/homeworkai-psle-tutor/id6770512063"
 const CONTACT_EMAIL = "me@maxlibin.com"
 
 const HomeworkAI = () => {
