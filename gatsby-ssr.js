@@ -2,6 +2,18 @@ const React = require('react');
 
 exports.onRenderBody = ({setHeadComponents}) => {
   setHeadComponents([
+    <link key="gf-preconnect" rel="preconnect" href="https://fonts.googleapis.com" />,
+    <link
+      key="gf-preconnect2"
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossOrigin="anonymous"
+    />,
+    <link
+      key="inter"
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    />,
     <script
       key="darkmode"
       dangerouslySetInnerHTML={{

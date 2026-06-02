@@ -7,7 +7,28 @@ module.exports = {
     "./src/templates/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        bg: "var(--bg)",
+        surface: "var(--surface)",
+        fg: "var(--fg)",
+        muted: "var(--muted)",
+        faint: "var(--faint)",
+        line: "var(--line)",
+      },
+      fontFamily: {
+        sans: [
+          "Inter",
+          "ui-sans-serif",
+          "system-ui",
+          "-apple-system",
+          "sans-serif",
+        ],
+      },
+      maxWidth: {
+        content: "40rem",
+      },
+    },
   },
   plugins: [],
 }
