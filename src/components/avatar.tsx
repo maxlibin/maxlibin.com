@@ -39,12 +39,13 @@ const Avatar = ({ size = 76 }: { size?: number }) => {
         )}
       </div>
 
-      {/* Time-of-day status as a speech bubble */}
-      <div className="absolute -top-2 -right-2">
-        <div className="relative flex items-center justify-center bg-surface border border-line rounded-full shadow-sm" style={{ width: 30, height: 30 }}>
+      {/* Time-of-day status as a tilted speech bubble (emoji stays upright) */}
+      <div className="absolute -top-2.5 -right-2.5">
+        <div className="relative flex items-center justify-center bg-surface border border-line rounded-full shadow-sm rotate-12" style={{ width: 30, height: 30 }}>
           <span
             role="img"
             aria-label="current status"
+            className="-rotate-12"
             style={{ fontSize: 16, lineHeight: 1 }}
           >
             {emoji}
