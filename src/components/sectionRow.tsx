@@ -7,18 +7,18 @@ export const SectionLabel = ({ children }: { children: React.ReactNode }) => (
 )
 
 type RowProps = {
-  left: React.ReactNode
-  right?: React.ReactNode
+  meta?: React.ReactNode
+  children: React.ReactNode
 }
 
-export const Row = ({ left, right }: RowProps) => (
-  <div className="flex items-baseline justify-between gap-6 py-2.5 border-b border-line last:border-b-0">
-    <div className="text-[15px] text-fg min-w-0">{left}</div>
-    {right != null && (
-      <div className="text-[13px] text-faint whitespace-nowrap tabular-nums shrink-0">
-        {right}
-      </div>
-    )}
+// ReadCV-style row: a narrow faint meta column on the left (date / years /
+// platform / label) and the primary content on the right.
+export const Row = ({ meta, children }: RowProps) => (
+  <div className="flex gap-4 sm:gap-8 py-3 border-b border-line last:border-b-0">
+    <div className="w-24 sm:w-28 shrink-0 text-[13px] leading-6 text-faint tabular-nums">
+      {meta}
+    </div>
+    <div className="flex-1 min-w-0 text-[15px] leading-6 text-fg">{children}</div>
   </div>
 )
 

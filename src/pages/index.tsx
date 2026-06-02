@@ -70,53 +70,30 @@ const Index = ({ data }) => {
         </p>
       </div>
 
-      <Projects />
-
-      <Section label="Experience">
-        {experience.map(({ org, role, years }) => (
-          <Row
-            key={org}
-            left={
-              <span>
-                <span className="text-fg">{org}</span>
-                <span className="text-faint"> — {role}</span>
-              </span>
-            }
-            right={years}
-          />
-        ))}
-      </Section>
-
-      <Section label="Education">
-        {education.map(({ school, org, years }) => (
-          <Row
-            key={school}
-            left={
-              <span>
-                <span className="text-fg">{school}</span>
-                <span className="text-faint"> — {org}</span>
-              </span>
-            }
-            right={years}
-          />
-        ))}
-      </Section>
-
       <Section label="Writing">
-        {data.allWpPost.nodes.map(({ slug, title, date }) => (
-          <Row
-            key={slug}
-            left={
+        {data.allWpPost.nodes.map(({ slug, title, date, featuredImage }) => {
+          const img = featuredImage?.node?.sourceUrl
+          return (
+            <Row key={slug} meta={date}>
               <Link
                 to={`/${slug}`}
-                className="text-fg hover:text-muted transition-colors"
+                className="group flex items-start gap-3"
               >
-                {title}
+                {img && (
+                  <img
+                    src={img}
+                    alt=""
+                    loading="lazy"
+                    className="w-16 h-11 rounded object-cover border border-line shrink-0"
+                  />
+                )}
+                <span className="text-fg group-hover:text-muted transition-colors">
+                  {title}
+                </span>
               </Link>
-            }
-            right={date}
-          />
-        ))}
+            </Row>
+          )
+        })}
         <div className="pt-4">
           <Link
             to="/blog"
@@ -127,23 +104,39 @@ const Index = ({ data }) => {
         </div>
       </Section>
 
+      <Projects />
+
+      <Section label="Experience">
+        {experience.map(({ org, role, years }) => (
+          <Row key={org} meta={years}>
+            <span className="text-fg">{org}</span>
+            <span className="text-faint"> — {role}</span>
+          </Row>
+        ))}
+      </Section>
+
+      <Section label="Education">
+        {education.map(({ school, org, years }) => (
+          <Row key={school} meta={years}>
+            <span className="text-fg">{school}</span>
+            <span className="text-faint"> — {org}</span>
+          </Row>
+        ))}
+      </Section>
+
       <Section label="Contact">
         {contacts.map(({ label, value, href }) => (
-          <Row
-            key={label}
-            left={
-              <a
-                href={href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-fg hover:text-muted transition-colors"
-              >
-                {value}
-                <span className="text-faint ml-1">↗</span>
-              </a>
-            }
-            right={label}
-          />
+          <Row key={label} meta={label}>
+            <a
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-fg hover:text-muted transition-colors"
+            >
+              {value}
+              <span className="text-faint ml-1">↗</span>
+            </a>
+          </Row>
         ))}
       </Section>
     </Layout>
@@ -156,7 +149,13 @@ export const pageQuery = graphql`
       nodes {
         title
         slug
-        date(formatString: "MMMM DD, YYYY")
+        date(formatString: "MMM DD, YYYY")
+        featuredImage {
+          node {
+            sourceUrl
+            altText
+          }
+        }
       }
     }
   }

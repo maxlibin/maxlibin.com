@@ -3,13 +3,19 @@ import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { SectionLabel } from "../components/sectionRow"
+import { SectionLabel, Row } from "../components/sectionRow"
 
 interface node {
   date: string
   excerpt: string
   slug: string
   title: string
+  featuredImage?: {
+    node?: {
+      sourceUrl?: string
+      altText?: string
+    }
+  }
 }
 
 interface post {
@@ -25,27 +31,33 @@ const Blog = ({ data }: post) => {
     <Layout>
       <div className="mt-4">
         <SectionLabel>Writing</SectionLabel>
-        <div className="-mt-1">
-          {data.allWpPost.nodes.map(({ slug, title, excerpt, date }) => (
-            <Link
-              to={`/${slug}`}
-              key={slug}
-              className="group block py-4 border-b border-line"
-            >
-              <div className="flex items-baseline justify-between gap-6">
-                <h3 className="text-[15px] text-fg group-hover:text-muted transition-colors">
-                  {title}
-                </h3>
-                <span className="text-[13px] text-faint whitespace-nowrap tabular-nums shrink-0">
-                  {date}
-                </span>
-              </div>
-              <div
-                className="mt-1 text-[13px] text-faint line-clamp-1"
-                dangerouslySetInnerHTML={{ __html: excerpt }}
-              />
-            </Link>
-          ))}
+        <div>
+          {data.allWpPost.nodes.map(({ slug, title, excerpt, date, featuredImage }) => {
+            const img = featuredImage?.node?.sourceUrl
+            return (
+              <Row key={slug} meta={date}>
+                <Link to={`/${slug}`} className="group flex items-start gap-3">
+                  {img && (
+                    <img
+                      src={img}
+                      alt=""
+                      loading="lazy"
+                      className="w-16 h-11 rounded object-cover border border-line shrink-0 mt-0.5"
+                    />
+                  )}
+                  <span className="min-w-0">
+                    <span className="block text-fg group-hover:text-muted transition-colors">
+                      {title}
+                    </span>
+                    <span
+                      className="block mt-1 text-[13px] text-faint line-clamp-1"
+                      dangerouslySetInnerHTML={{ __html: excerpt }}
+                    />
+                  </span>
+                </Link>
+              </Row>
+            )
+          })}
         </div>
       </div>
     </Layout>
@@ -58,8 +70,14 @@ export const pageQuery = graphql`
       nodes {
         title
         excerpt
-        date(formatString: "MMMM DD, YYYY")
+        date(formatString: "MMM DD, YYYY")
         slug
+        featuredImage {
+          node {
+            sourceUrl
+            altText
+          }
+        }
       }
     }
   }

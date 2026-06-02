@@ -68,21 +68,18 @@ const Projects = () => {
   return (
     <Section label="Projects">
       {projects.map(project => (
-        <Row
-          key={project.id}
-          left={
-            <a
-              href={project.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-fg hover:text-muted transition-colors"
-            >
-              {project.title}
-              <span className="text-faint ml-1">↗</span>
-            </a>
-          }
-          right={`${project.category} · ${project.platform}`}
-        />
+        <Row key={project.id} meta={project.platform}>
+          <a
+            href={project.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-fg hover:text-muted transition-colors"
+          >
+            {project.title}
+            <span className="text-faint ml-1">↗</span>
+          </a>
+          <span className="text-faint"> — {project.category}</span>
+        </Row>
       ))}
 
       {/* Per-project schema for SEO/GEO */}
