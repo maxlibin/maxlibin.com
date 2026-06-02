@@ -36,24 +36,32 @@ const Blog = ({ data }: post) => {
             const img = featuredImage?.node?.sourceUrl
             return (
               <Row key={slug} meta={date}>
-                <Link to={`/${slug}`} className="group flex items-start gap-3">
-                  {img && (
-                    <img
-                      src={img}
-                      alt=""
-                      loading="lazy"
-                      className="w-16 h-11 rounded object-cover border border-line shrink-0 mt-0.5"
-                    />
-                  )}
-                  <span className="min-w-0">
-                    <span className="block text-fg group-hover:text-muted transition-colors">
-                      {title}
+                <Link to={`/${slug}`} className="group block">
+                  <span className="block text-fg group-hover:text-muted transition-colors">
+                    {title}
+                    <span className="text-faint ml-1">↗</span>
+                  </span>
+                  {img ? (
+                    <span className="mt-3 flex overflow-hidden rounded-xl border border-line">
+                      <img
+                        src={img}
+                        alt=""
+                        loading="lazy"
+                        className="w-28 sm:w-36 object-cover shrink-0"
+                      />
+                      <span className="flex items-center min-w-0 p-4">
+                        <span
+                          className="text-[13px] text-faint line-clamp-2"
+                          dangerouslySetInnerHTML={{ __html: excerpt }}
+                        />
+                      </span>
                     </span>
+                  ) : (
                     <span
-                      className="block mt-1 text-[13px] text-faint line-clamp-1"
+                      className="mt-1 block text-[13px] text-faint line-clamp-1"
                       dangerouslySetInnerHTML={{ __html: excerpt }}
                     />
-                  </span>
+                  )}
                 </Link>
               </Row>
             )

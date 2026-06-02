@@ -140,3 +140,27 @@ li code {
 .post hr {
   @apply my-8 border-line;
 }
+
+/* line-clamp fallback (Tailwind 3.2 has no core line-clamp utilities) */
+.line-clamp-1,
+.line-clamp-2,
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.line-clamp-1 {
+  -webkit-line-clamp: 1;
+}
+.line-clamp-2 {
+  -webkit-line-clamp: 2;
+}
+.line-clamp-3 {
+  -webkit-line-clamp: 3;
+}
+.line-clamp-1 > p,
+.line-clamp-2 > p,
+.line-clamp-3 > p {
+  display: inline;
+  margin: 0;
+}

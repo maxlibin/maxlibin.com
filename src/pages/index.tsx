@@ -71,25 +71,31 @@ const Index = ({ data }) => {
       </div>
 
       <Section label="Writing">
-        {data.allWpPost.nodes.map(({ slug, title, date, featuredImage }) => {
+        {data.allWpPost.nodes.map(({ slug, title, date, excerpt, featuredImage }) => {
           const img = featuredImage?.node?.sourceUrl
           return (
             <Row key={slug} meta={date}>
-              <Link
-                to={`/${slug}`}
-                className="group flex items-start gap-3"
-              >
-                {img && (
-                  <img
-                    src={img}
-                    alt=""
-                    loading="lazy"
-                    className="w-16 h-11 rounded object-cover border border-line shrink-0"
-                  />
-                )}
-                <span className="text-fg group-hover:text-muted transition-colors">
+              <Link to={`/${slug}`} className="group block">
+                <span className="block text-fg group-hover:text-muted transition-colors">
                   {title}
+                  <span className="text-faint ml-1">↗</span>
                 </span>
+                {img && (
+                  <span className="mt-3 flex overflow-hidden rounded-xl border border-line">
+                    <img
+                      src={img}
+                      alt=""
+                      loading="lazy"
+                      className="w-28 sm:w-36 object-cover shrink-0"
+                    />
+                    <span className="flex items-center min-w-0 p-4">
+                      <span
+                        className="text-[13px] text-faint line-clamp-2"
+                        dangerouslySetInnerHTML={{ __html: excerpt }}
+                      />
+                    </span>
+                  </span>
+                )}
               </Link>
             </Row>
           )
@@ -149,6 +155,7 @@ export const pageQuery = graphql`
       nodes {
         title
         slug
+        excerpt
         date(formatString: "MMM DD, YYYY")
         featuredImage {
           node {
