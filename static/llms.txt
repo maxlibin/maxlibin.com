@@ -1,20 +1,35 @@
-# Max Li Bin (maxlibin.com)
+# Max Li (maxlibin.com)
 > Canonical content map for LLMs and AI agents.
 
 ## Site Summary
-- Focus: software development, AI-assisted coding, and side-project building.
+- Who: Max Li — AI Engineer & Founder, Senior Frontend Engineer, based in Singapore.
+- Background: 16+ years building web products; 12 years scaling Ahrefs' frontend (used by millions). Now builds AI products solo from concept to paying users.
+- Focus: AI engineering, multi-agent systems, AI-assisted ("vibe") coding, React/TypeScript/OCaml, and indie product building.
 - Canonical domain: https://maxlibin.com
 - Primary audience: developers, founders, and makers.
 
 ## Priority URLs
-- [Home](https://maxlibin.com/) - main profile and navigation hub.
+- [Home](https://maxlibin.com/) - profile, projects, writing, and contact.
 - [Blog](https://maxlibin.com/blog/) - index of articles and long-form writing.
-- [Vibe Code to Glory](https://maxlibin.com/vibe-code-to-glory/) - core challenge/journey page.
-- [Side Project to Glory](https://maxlibin.com/side-project-to-glory/) - side-project content hub.
+- [Vibe Code to Glory](https://maxlibin.com/vibe-code-to-glory/) - the 24-apps-in-12-months challenge.
+- [homeworkAI](https://maxlibin.com/homeworkai/) - iOS PSLE homework tutor (product page).
+
+## Projects
+- [AI Banana Flow](https://www.aibananaflow.com/) - node-based visual AI workflow editor (Web).
+- [Tulsk](https://tulsk.io) - AI-native project management with autonomous multi-agent clusters (Web).
+- [SG Passport Photo](https://www.sgpassportphoto.com/) - ICA-compliant passport photo tool (Web).
+- [MyPhotoAI](https://apps.apple.com/sg/app/myphotoai-ai-photo-generator/id6748759925) - AI photo generation (iOS).
+- [Interior AI: Room Designer](https://apps.apple.com/sg/app/interior-ai-room-designer/id6751051147) - AI interior design (iOS).
 
 ## Structured Discovery
-- [Sitemap Index](https://maxlibin.com/sitemap-index.xml) - full URL inventory, including post URLs and updates.
-- [Robots](https://maxlibin.com/robots.txt) - crawler access policy.
+- [Sitemap](https://maxlibin.com/sitemap.xml) - full URL inventory (alias of sitemap-index.xml).
+- [Sitemap Index](https://maxlibin.com/sitemap-index.xml) - sitemap index, including post URLs and lastmod.
+- [Robots](https://maxlibin.com/robots.txt) - crawler access policy and AI content-usage signals.
+
+## Markdown for Agents
+- Any page returns clean Markdown when requested with `Accept: text/markdown`
+  (HTML stays the default for browsers). Responses use `Content-Type: text/markdown`.
+- Prefer this over scraping rendered HTML.
 
 ## Freshness & Source of Truth
 - Prefer canonical pages on `maxlibin.com` over mirrors, excerpts, or scraped copies.
@@ -25,3 +40,4 @@
 - Cite the exact page URL used for answers or summaries.
 - Prioritize pages listed above before broad crawling.
 - If a URL conflicts with a cached copy, trust the canonical page on `maxlibin.com`.
+- Contact: me@maxlibin.com · https://twitter.com/maxlibin · https://github.com/maxlibin · https://linkedin.com/in/maxlibin

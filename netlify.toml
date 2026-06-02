@@ -4,6 +4,12 @@
   status = 301
   force = true
 
+# Serve the sitemap at the conventional /sitemap.xml path crawlers default to.
+[[redirects]]
+  from = "/sitemap.xml"
+  to = "/sitemap-index.xml"
+  status = 200
+
 # RFC 8288 Link headers for agent discovery + content-negotiation hints.
 [[headers]]
   for = "/*"
