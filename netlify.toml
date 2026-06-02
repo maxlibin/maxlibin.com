@@ -3,3 +3,10 @@
   to = "/vibe-code-to-glory"
   status = 301
   force = true
+
+# RFC 8288 Link headers for agent discovery + content-negotiation hints.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Link = '</llms.txt>; rel="describedby"; type="text/markdown", </sitemap-index.xml>; rel="sitemap"'
+    Vary = "Accept"

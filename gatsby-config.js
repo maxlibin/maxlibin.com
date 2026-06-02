@@ -89,14 +89,6 @@ module.exports = {
         },
       },
     },
-    {
-      resolve: "gatsby-plugin-robots-txt",
-      options: {
-        host: "https://maxlibin.com",
-        sitemap: "https://maxlibin.com/sitemap-index.xml",
-        policy: [{ userAgent: "*", allow: "/" }],
-      },
-    },
   ],
   trailingSlash: "always",
 }

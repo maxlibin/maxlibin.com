@@ -1,0 +1,7 @@
+# AI content usage preferences — https://contentsignals.org/
+User-agent: *
+Content-Signal: ai-train=yes, search=yes, ai-input=yes
+Allow: /
+
+Host: https://maxlibin.com
+Sitemap: https://maxlibin.com/sitemap-index.xml
