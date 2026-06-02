@@ -74,3 +74,6 @@ yarn-error.log
 
 # Optional: if you are not using Zero-Installs, uncomment the line below
 .yarn/cache
+
+# Playwright MCP artifacts
+.playwright-mcp/

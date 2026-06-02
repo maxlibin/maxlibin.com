@@ -151,26 +151,26 @@ const VibeCodeToGlory = () => {
   const shippedCount = challenges.filter(c => c.status === "Shipped").length
 
   return (
-    <Layout>
+    <Layout wide>
       <div className="mt-8 mb-16 px-4 md:px-0 relative">
         <SEO title="Vibe Code to Glory - Side Projects 2026" />
 
         {/* Header Section */}
-        <div className="py-8 border-b border-gray-200 dark:border-gray-800 mb-8">
-          <h1 className="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 mb-4">
+        <div className="py-8 border-b border-line mb-8">
+          <h1 className="text-3xl md:text-4xl font-semibold tracking-tight text-fg mb-3">
             Vibe Code to Glory
           </h1>
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-2">
+          <h2 className="text-[15px] font-medium text-faint uppercase tracking-wider mb-3">
             Side Projects 2026
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl">
+          <p className="text-[15px] leading-relaxed text-muted max-w-content">
             24 revenue-ready apps in 12 months. One independent developer.
             Pushing the limits of the "Vibe Coding" workflow.
           </p>
 
           {/* Progress Bar */}
           <div className="mt-8">
-            <div className="flex justify-between text-sm font-medium text-gray-600 dark:text-gray-400 mb-2">
+            <div className="flex justify-between text-[13px] text-faint mb-2">
               <span>
                 Progress: {shippedCount} / {TOTAL_SLOTS} Apps Shipped
               </span>
@@ -178,9 +178,9 @@ const VibeCodeToGlory = () => {
                 {Math.round((shippedCount / TOTAL_SLOTS) * 100)}% Complete
               </span>
             </div>
-            <div className="w-full bg-gray-200 rounded-full h-4 dark:bg-gray-700 overflow-hidden">
+            <div className="w-full bg-line rounded-full h-2 overflow-hidden">
               <div
-                className="bg-gradient-to-r from-purple-500 to-pink-500 h-4 rounded-full transition-all duration-1000 ease-out"
+                className="bg-fg h-2 rounded-full transition-all duration-1000 ease-out"
                 style={{ width: `${(shippedCount / TOTAL_SLOTS) * 100}%` }}
               ></div>
             </div>
@@ -194,8 +194,8 @@ const VibeCodeToGlory = () => {
               key={challengeNumber}
               onClick={() => project && setSelectedProject(project)}
               className={`relative group rounded-xl border transition-all duration-300 ${project
-                ? "border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 hover:shadow-xl hover:-translate-y-1 cursor-pointer"
-                : "border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-800/50 border-dashed"
+                ? "border-line bg-surface hover:shadow-lg cursor-pointer"
+                : "border-line bg-surface/50 border-dashed"
                 } overflow-hidden min-h-[350px] flex flex-col`}
             >
               {project ? (
@@ -212,31 +212,31 @@ const VibeCodeToGlory = () => {
                       <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent z-10" />
                     </>
                   ) : (
-                    <div className="absolute inset-0 bg-gradient-to-br from-purple-900 to-indigo-900 z-0" />
+                    <div className="absolute inset-0 bg-surface z-0" />
                   )}
 
 
                   <div className="relative z-20 p-6 flex-grow flex flex-col h-full text-white">
                     {/* Top Badge */}
                     <div className="flex justify-between items-start mb-4">
-                      <div className="bg-black/50 backdrop-blur-md border border-white/20 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest text-white/90">
+                      <div className="bg-black/40 backdrop-blur-md text-[10px] font-medium px-2.5 py-1 rounded-full uppercase tracking-wider text-white/90">
                         {project.platform}
                       </div>
-                      <div className="bg-white/20 backdrop-blur-md text-white text-xs font-bold px-2 py-1 rounded-full border border-white/20">
+                      <div className="bg-white/15 backdrop-blur-md text-white text-[10px] font-medium px-2 py-1 rounded-full">
                         #{challengeNumber}
                       </div>
                     </div>
 
                     <div className="mt-auto">
-                      <h3 className="text-2xl font-extrabold text-white mb-2 leading-tight group-hover:text-pink-400 transition-colors">
+                      <h3 className="text-xl font-semibold text-white mb-2 leading-tight">
                         {project.title}
                       </h3>
-                      <p className="text-sm text-gray-300 mb-4 line-clamp-2 leading-relaxed">
+                      <p className="text-[13px] text-white/70 mb-4 line-clamp-2 leading-relaxed">
                         {project.description}
                       </p>
 
                       <div className="pt-4 border-t border-white/10 flex items-center justify-between">
-                        <span className="text-xs font-bold px-2 py-1 rounded bg-green-500/20 text-green-300 border border-green-500/30">
+                        <span className="text-[10px] font-medium px-2 py-1 rounded bg-white/15 text-white/90">
                           {project.status}
                         </span>
                         <a
@@ -244,7 +244,7 @@ const VibeCodeToGlory = () => {
                           target="_blank"
                           rel="noopener noreferrer"
                           onClick={(e) => e.stopPropagation()}
-                          className="text-sm font-bold text-white hover:text-pink-400 flex items-center gap-1 transition-colors"
+                          className="text-[13px] font-medium text-white/90 hover:text-white flex items-center gap-1 transition-colors"
                         >
                           Visit Site <span className="text-lg">→</span>
                         </a>
@@ -255,13 +255,13 @@ const VibeCodeToGlory = () => {
               ) : (
                 // EMPTY SLOT
                 <div className="flex flex-col items-center justify-center h-full p-6 text-center opacity-50 hover:opacity-100 transition-opacity relative z-10">
-                  <div className="text-6xl font-black text-gray-200 dark:text-gray-700 mb-4 select-none">
+                  <div className="text-5xl font-semibold text-line mb-4 select-none">
                     {challengeNumber}
                   </div>
-                  <h3 className="text-lg font-semibold text-gray-500 dark:text-gray-400 mb-1">
+                  <h3 className="text-[15px] font-medium text-faint mb-1">
                     Upcoming App
                   </h3>
-                  <p className="text-xs text-gray-400 dark:text-gray-500">
+                  <p className="text-[13px] text-faint">
                     Waiting for deployment...
                   </p>
                 </div>
@@ -277,7 +277,7 @@ const VibeCodeToGlory = () => {
               className="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity"
               onClick={() => setSelectedProject(null)}
             />
-            <div className="relative bg-white dark:bg-gray-900 rounded-2xl shadow-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto flex flex-col animate-in fade-in zoom-in-95 duration-200 border border-gray-100 dark:border-gray-800">
+            <div className="relative bg-surface rounded-2xl shadow-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto flex flex-col animate-in fade-in zoom-in-95 duration-200 border border-line">
 
               {/* Modal Header */}
               <div className="relative h-64 sm:h-80 w-full overflow-hidden">
@@ -292,28 +292,28 @@ const VibeCodeToGlory = () => {
                     <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/60 to-transparent" />
                   </>
                 ) : (
-                  <div className="absolute inset-0 bg-gradient-to-br from-purple-900 to-indigo-900" />
+                  <div className="absolute inset-0 bg-surface" />
                 )}
 
                 <div className="absolute inset-0 p-6 sm:p-8 flex flex-col justify-end">
                   <div className="flex justify-between items-end">
                     <div className="relative z-10 text-white">
                       <div className="flex items-center gap-3 mb-2">
-                        <span className="bg-pink-600 text-white text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider">
+                        <span className="bg-white/20 backdrop-blur-md text-white text-[10px] font-medium px-2 py-0.5 rounded uppercase tracking-wider">
                           Project #{selectedProject.id}
                         </span>
-                        <span className="bg-white/20 backdrop-blur-md text-white/90 text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider border border-white/10">
+                        <span className="bg-white/20 backdrop-blur-md text-white/90 text-[10px] font-medium px-2 py-0.5 rounded uppercase tracking-wider border border-white/10">
                           {selectedProject.platform}
                         </span>
                       </div>
 
-                      <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-2 shadow-sm">
+                      <h2 className="text-2xl sm:text-3xl font-semibold text-white mb-2">
                         {selectedProject.url ? (
                           <a
                             href={selectedProject.url}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="hover:text-pink-400 transition-colors"
+                            className="hover:text-white/80 transition-colors"
                           >
                             {selectedProject.title}
                           </a>
@@ -321,7 +321,7 @@ const VibeCodeToGlory = () => {
                           selectedProject.title
                         )}
                       </h2>
-                      <p className="text-lg text-gray-200 font-medium">
+                      <p className="text-[15px] text-white/80 font-medium">
                         {selectedProject.status}
                       </p>
                     </div>
@@ -344,14 +344,14 @@ const VibeCodeToGlory = () => {
 
                 {/* Description & Excerpt */}
                 <div>
-                  <h3 className="text-sm font-bold uppercase text-gray-400 dark:text-gray-500 mb-3 tracking-wider">
+                  <h3 className="text-[11px] font-medium uppercase text-faint mb-3 tracking-wider">
                     About the Project
                   </h3>
-                  <p className="text-gray-700 dark:text-gray-300 text-lg leading-relaxed mb-4">
+                  <p className="text-muted text-[15px] leading-relaxed mb-4">
                     {selectedProject.description}
                   </p>
                   {selectedProject.excerpt && (
-                    <div className="bg-indigo-50 dark:bg-indigo-900/20 border-l-4 border-indigo-500 p-4 rounded-r italic text-gray-600 dark:text-gray-400">
+                    <div className="border-l-2 border-line pl-4 italic text-muted">
                       "{selectedProject.excerpt}"
                     </div>
                   )}
@@ -360,12 +360,12 @@ const VibeCodeToGlory = () => {
                 {/* Vibe Stack */}
                 {selectedProject.technologies && (
                   <div>
-                    <h3 className="text-sm font-bold uppercase text-gray-400 dark:text-gray-500 mb-3 tracking-wider flex items-center gap-2">
+                    <h3 className="text-[11px] font-medium uppercase text-faint mb-3 tracking-wider">
                       <span>✨ Vibe Stack</span>
                     </h3>
                     <div className="flex flex-wrap gap-2">
                       {selectedProject.technologies.map((tech: string) => (
-                        <span key={tech} className="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full text-sm font-medium border border-gray-200 dark:border-gray-700">
+                        <span key={tech} className="px-3 py-1 bg-bg text-muted rounded-full text-[13px] border border-line">
                           {tech}
                         </span>
                       ))}
@@ -380,9 +380,9 @@ const VibeCodeToGlory = () => {
                       href={selectedProject.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex-1 inline-flex justify-center items-center px-6 py-3 border border-transparent text-base font-medium rounded-xl shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-all hover:scale-[1.02]"
+                      className="flex-1 inline-flex justify-center items-center px-6 py-3 text-[15px] font-medium rounded-xl text-bg bg-fg hover:opacity-90 transition-opacity"
                     >
-                      Launch App 🚀
+                      Launch App ↗
                     </a>
                   )}
                   {selectedProject.blogUrl && (
@@ -390,9 +390,9 @@ const VibeCodeToGlory = () => {
                       href={selectedProject.blogUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex-1 inline-flex justify-center items-center px-6 py-3 border border-gray-300 dark:border-gray-600 text-base font-medium rounded-xl shadow-sm text-gray-700 dark:text-gray-200 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-all hover:scale-[1.02]"
+                      className="flex-1 inline-flex justify-center items-center px-6 py-3 text-[15px] font-medium rounded-xl text-fg border border-line bg-surface hover:bg-bg transition-colors"
                     >
-                      Read Full Story 📖
+                      Read the story
                     </a>
                   )}
                 </div>
@@ -406,18 +406,18 @@ const VibeCodeToGlory = () => {
         )}
 
         {/* Footer / CTA */}
-        <div className="mt-16 text-center p-8 bg-gray-50 dark:bg-gray-900 rounded-2xl border border-gray-100 dark:border-gray-800">
-          <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+        <div className="mt-16 text-center p-8 bg-surface rounded-2xl border border-line">
+          <h3 className="text-xl font-semibold text-fg mb-3">
             Follow the Journey
           </h3>
-          <p className="text-gray-600 dark:text-gray-400 mb-6">
+          <p className="text-[15px] text-muted mb-6">
             I'm documenting the entire process of building these 24 apps.
           </p>
           <a
             href="https://twitter.com/maxlibin"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+            className="inline-flex items-center px-6 py-3 text-[15px] font-medium rounded-xl text-bg bg-fg hover:opacity-90 transition-opacity"
           >
             Follow on Twitter
           </a>

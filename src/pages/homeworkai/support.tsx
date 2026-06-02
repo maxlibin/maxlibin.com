@@ -14,10 +14,10 @@ const Section = ({
   children: React.ReactNode
 }) => (
   <section className="mb-8">
-    <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-3">
+    <h2 className="text-2xl font-bold text-fg mb-3">
       {title}
     </h2>
-    <div className="text-gray-700 dark:text-gray-300 space-y-3">{children}</div>
+    <div className="text-muted space-y-3">{children}</div>
   </section>
 )
 
@@ -71,15 +71,15 @@ const Support = () => {
         <div className="mb-3 text-sm">
           <Link
             to="/homeworkai/"
-            className="text-indigo-600 dark:text-indigo-400 hover:underline"
+            className="text-fg hover:underline"
           >
             ← homeworkAI
           </Link>
         </div>
-        <h1 className="text-4xl font-extrabold text-gray-900 dark:text-gray-100 mb-2">
+        <h1 className="text-4xl font-extrabold text-fg mb-2">
           Support
         </h1>
-        <p className="text-gray-600 dark:text-gray-400 mb-10 max-w-2xl">
+        <p className="text-muted mb-10 max-w-2xl">
           The fastest way to get help is to email us. We read every message.
         </p>
 
@@ -88,7 +88,7 @@ const Support = () => {
             Email{" "}
             <a
               href={`mailto:${CONTACT_EMAIL}?subject=homeworkAI%20support`}
-              className="text-indigo-600 dark:text-indigo-400 hover:underline font-semibold"
+              className="text-fg hover:underline font-semibold"
             >
               {CONTACT_EMAIL}
             </a>{" "}
@@ -108,12 +108,12 @@ const Support = () => {
             {faqs.map(f => (
               <div
                 key={f.question}
-                className="border-b border-gray-100 dark:border-gray-800 pb-4"
+                className="border-b border-line pb-4"
               >
-                <h3 className="font-semibold text-gray-900 dark:text-gray-100 mb-1">
+                <h3 className="font-semibold text-fg mb-1">
                   {f.question}
                 </h3>
-                <p className="text-gray-700 dark:text-gray-300">{f.answer}</p>
+                <p className="text-muted">{f.answer}</p>
               </div>
             ))}
           </div>
@@ -126,7 +126,7 @@ const Support = () => {
                 href={APP_STORE_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-indigo-600 dark:text-indigo-400 hover:underline"
+                className="text-fg hover:underline"
               >
                 homeworkAI on the App Store
               </a>
@@ -134,7 +134,7 @@ const Support = () => {
             <li>
               <Link
                 to="/homeworkai/privacy/"
-                className="text-indigo-600 dark:text-indigo-400 hover:underline"
+                className="text-fg hover:underline"
               >
                 Privacy Policy
               </Link>
@@ -142,7 +142,7 @@ const Support = () => {
             <li>
               <Link
                 to="/homeworkai/terms/"
-                className="text-indigo-600 dark:text-indigo-400 hover:underline"
+                className="text-fg hover:underline"
               >
                 Terms of Use
               </Link>

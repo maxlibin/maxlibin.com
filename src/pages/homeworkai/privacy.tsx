@@ -14,10 +14,10 @@ const Section = ({
   children: React.ReactNode
 }) => (
   <section className="mb-8">
-    <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-3">
+    <h2 className="text-2xl font-bold text-fg mb-3">
       {title}
     </h2>
-    <div className="prose prose-gray dark:prose-invert max-w-none text-gray-700 dark:text-gray-300 space-y-3">
+    <div className="prose prose-gray dark:prose-invert max-w-none text-muted space-y-3">
       {children}
     </div>
   </section>
@@ -30,15 +30,15 @@ const Privacy = () => {
         <div className="mb-3 text-sm">
           <Link
             to="/homeworkai/"
-            className="text-indigo-600 dark:text-indigo-400 hover:underline"
+            className="text-fg hover:underline"
           >
             ← homeworkAI
           </Link>
         </div>
-        <h1 className="text-4xl font-extrabold text-gray-900 dark:text-gray-100 mb-2">
+        <h1 className="text-4xl font-extrabold text-fg mb-2">
           Privacy Policy
         </h1>
-        <p className="text-sm text-gray-500 dark:text-gray-400 mb-10">
+        <p className="text-sm text-faint mb-10">
           Effective {EFFECTIVE_DATE}
         </p>
 
@@ -70,7 +70,7 @@ const Privacy = () => {
             and operated by Max Li Bin (Singapore). Contact:{" "}
             <a
               href={`mailto:${CONTACT_EMAIL}`}
-              className="text-indigo-600 dark:text-indigo-400 hover:underline"
+              className="text-fg hover:underline"
             >
               {CONTACT_EMAIL}
             </a>
@@ -184,7 +184,7 @@ const Privacy = () => {
             the app and you would like it removed, email{" "}
             <a
               href={`mailto:${CONTACT_EMAIL}`}
-              className="text-indigo-600 dark:text-indigo-400 hover:underline"
+              className="text-fg hover:underline"
             >
               {CONTACT_EMAIL}
             </a>
@@ -227,7 +227,7 @@ const Privacy = () => {
             to lodge a complaint with a data protection authority. Email{" "}
             <a
               href={`mailto:${CONTACT_EMAIL}`}
-              className="text-indigo-600 dark:text-indigo-400 hover:underline"
+              className="text-fg hover:underline"
             >
               {CONTACT_EMAIL}
             </a>{" "}
@@ -248,7 +248,7 @@ const Privacy = () => {
             Questions about this policy?{" "}
             <a
               href={`mailto:${CONTACT_EMAIL}`}
-              className="text-indigo-600 dark:text-indigo-400 hover:underline"
+              className="text-fg hover:underline"
             >
               {CONTACT_EMAIL}
             </a>
