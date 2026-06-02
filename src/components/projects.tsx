@@ -1,8 +1,9 @@
-import React, { useState } from "react"
+import React from "react"
 import aiBananaFlow from "../assets/images/projects/ai-banana-flow.png"
 import sgPassportPhoto from "../assets/images/projects/sg-passport-photo.png"
 import myPhotoAI from "../assets/images/projects/myphotoai.png"
 import interiorAI from "../assets/images/projects/interior-ai.png"
+import { Section, Row } from "./sectionRow"
 
 const projects = [
   {
@@ -53,103 +54,46 @@ const projects = [
 ]
 
 const Projects = () => {
-  const [selectedProject, setSelectedProject] = useState(projects[0])
-
   return (
-    <div className="w-full mt-8">
-      {/* Dynamic Schema for the selected project (SEO/GEO) */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "SoftwareApplication",
-            name: selectedProject.title,
-            description: selectedProject.description.split("\n")[0],
-            applicationCategory: selectedProject.category,
-            operatingSystem: selectedProject.platform === "iOS" ? "iOS" : "Web",
-            url: selectedProject.url,
-            author: {
-              "@type": "Person",
-              name: "Max Li Bin",
-            },
-          }),
-        }}
-      />
+    <Section label="Projects">
+      {projects.map(project => (
+        <Row
+          key={project.id}
+          left={
+            <a
+              href={project.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-fg hover:text-muted transition-colors"
+            >
+              {project.title}
+              <span className="text-faint ml-1">↗</span>
+            </a>
+          }
+          right={`${project.category} · ${project.platform}`}
+        />
+      ))}
 
-      <div className="py-6 border-b border-gray-200 dark:border-gray-800">
-        <h2 className="text-3xl font-bold text-gray-900 dark:text-white text-left">
-          Vibe Code to Glory - Side Projects 2026
-        </h2>
-      </div>
-      <div className="py-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          <div className="h-[600px] overflow-hidden border border-gray-200 dark:border-gray-800 rounded-lg">
-            <div className="p-6">
-              <div className="h-[568px] overflow-y-auto pr-4 scrollbar">
-                <h3 className="text-2xl font-semibold mb-2 text-gray-900 dark:text-white">
-                  {selectedProject.title}
-                </h3>
-                <p className="text-lg text-gray-600 dark:text-gray-400 mb-4">
-                  {selectedProject.platform} App
-                </p>
-                {selectedProject.url && (
-                  <a
-                    href={selectedProject.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-block px-4 py-2 mb-4 bg-black dark:bg-white text-white dark:text-black rounded-lg transition-colors duration-200"
-                  >
-                    Check out this project
-                  </a>
-                )}
-
-                <div className="space-y-4">
-                  <p className="text-gray-700 dark:text-gray-300 whitespace-pre-line">
-                    {selectedProject.description}
-                  </p>
-                  <p className="text-gray-700 dark:text-gray-300">
-                    <strong>Category:</strong> {selectedProject.category}
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-2 gap-4">
-            {projects.map(project => (
-              <div
-                key={project.id}
-                className={`cursor-pointer border rounded-lg transition-all duration-300 hover:border-indigo-500 ${
-                  selectedProject.id === project.id
-                    ? "border-indigo-500"
-                    : "border-gray-200 dark:border-gray-800"
-                }`}
-                onClick={() => setSelectedProject(project)}
-              >
-                <div className="p-4 flex flex-col items-center">
-                  <div className="w-full h-32 mb-4 overflow-hidden rounded-md">
-                    <img
-                      src={project.coverUrl}
-                      alt={`${project.title} - ${project.category} ${project.platform} application by Max Li Bin`}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div className="w-full text-left">
-                    <h4 className="text-sm font-semibold text-gray-900 dark:text-white mb-0">
-                      {project.title}
-                    </h4>
-                    <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
-                      {project.platform}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </div>
+      {/* Per-project schema for SEO/GEO */}
+      {projects.map(project => (
+        <script
+          key={`schema-${project.id}`}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "SoftwareApplication",
+              name: project.title,
+              description: project.description.split("\n")[0],
+              applicationCategory: project.category,
+              operatingSystem: project.platform === "iOS" ? "iOS" : "Web",
+              url: project.url,
+              author: { "@type": "Person", name: "Max Li Bin" },
+            }),
+          }}
+        />
+      ))}
+    </Section>
   )
 }
 

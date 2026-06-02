@@ -17,7 +17,7 @@ const ToggleMode = () => {
   };
 
   return (
-    <button type="button" aria-label="Color Mode" className="flex justify-center p-2 text-gray-500 transition duration-150 ease-in-out bg-gray-100 border border-transparent rounded-md lg:bg-white lg:dark:bg-gray-900 dark:text-gray-200 dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 hover:text-gray-700 focus:outline-none focus:bg-gray-50 dark:focus:bg-gray-700 active:bg-gray-50" onClick={ThemeToggle}>
+    <button type="button" aria-label="Color Mode" className="flex justify-center p-2 text-faint hover:text-fg transition-colors rounded-md focus:outline-none" onClick={ThemeToggle}>
       {theme === 'dark' ? (
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5 transform -rotate-90">
           <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>

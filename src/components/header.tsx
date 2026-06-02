@@ -16,15 +16,15 @@ const links: Array<link> = [
 ]
 
 const Header = () => (
-  <header className="py-4 flex items-center mb-4">
+  <header className="py-8 flex items-center gap-6">
     <nav aria-label="Main navigation">
-      <ul className="flex space-x-4">
+      <ul className="flex gap-5 text-sm">
         {links.map(({ href, label }) => (
           <li key={label}>
             <Link
               to={href}
-              className="text-gray-600 dark:text-gray-300 hover:text-indigo-800 dark:hover:text-indigo-500 transition-colors"
-              activeClassName="!text-indigo-600 dark:!text-indigo-400 font-bold"
+              className="text-faint hover:text-fg transition-colors"
+              activeClassName="!text-fg"
             >
               {label}
             </Link>
@@ -32,7 +32,7 @@ const Header = () => (
         ))}
       </ul>
     </nav>
-    <div className="ml-auto flex space-x-4 items-center">
+    <div className="ml-auto flex items-center gap-4">
       <Social />
       <ThemeToggle />
     </div>

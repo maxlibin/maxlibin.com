@@ -3,10 +3,9 @@ import { graphql } from "gatsby"
 import parse from "html-react-parser"
 import { Helmet } from "react-helmet"
 import SyntaxHighlighter from "react-syntax-highlighter"
-import { anOldHope } from "react-syntax-highlighter/dist/esm/styles/hljs"
+import { atomOneDark } from "react-syntax-highlighter/dist/esm/styles/hljs"
 
 import Layout from "../components/layout"
-import Projects from "../components/projects"
 import SEO from "../components/seo"
 
 type node = {
@@ -89,8 +88,8 @@ const BlogPost = ({ data }: post) => {
               id={id}
               className={
                 domNode.tagName === "h2"
-                  ? "text-4xl font-bold mt-12 mb-6"
-                  : "text-2xl font-bold mt-8 mb-4"
+                  ? "text-2xl font-semibold text-fg mt-12 mb-5"
+                  : "text-xl font-semibold text-fg mt-8 mb-3"
               }
             >
               {domNode.children.map((child: any, i: number) => {
@@ -106,14 +105,14 @@ const BlogPost = ({ data }: post) => {
           return (
             <SyntaxHighlighter
               language={language}
-              style={anOldHope}
+              style={atomOneDark}
               customStyle={{
-                padding: "28px",
-                backgroundColor: "rgb(26 25 59)",
+                padding: "20px",
+                backgroundColor: "#171513",
                 borderRadius: "8px",
                 marginBottom: "28px",
-                border: "1px solid #01040a",
-                borderLeft: "8px solid #6611e2",
+                border: "1px solid rgba(255,255,255,0.1)",
+                fontSize: "14px",
               }}
             >
               {domNode.children[0].children?.map((n: any) => n.data).join("")}
@@ -146,10 +145,8 @@ const BlogPost = ({ data }: post) => {
     <Layout>
       <div className="post">
         <div className="py-8">
-          <div className="text-xs text-gray-700 dark:text-gray-500 mb-2">
-            {date}
-          </div>
-          <h1 className="text-6xl leading-snug font-bold text-gray-900 dark:text-white mb-4">
+          <div className="text-[13px] text-faint mb-2">{date}</div>
+          <h1 className="text-3xl md:text-4xl font-semibold tracking-tight text-fg leading-tight">
             {title}
           </h1>
         </div>
@@ -159,24 +156,19 @@ const BlogPost = ({ data }: post) => {
           {/* Reduced mt-4 to mt-0 */}
           {/* Main Content */}
           <div className="lg:col-span-8">
-            {/* GEO Optimized: Key Takeaways / Summary */}
-            <div className="bg-indigo-50 dark:bg-indigo-900/20 border-l-4 border-indigo-500 p-6 mb-12 rounded-r-lg">
-              <h2 className="text-xl font-bold text-indigo-900 dark:text-indigo-300 mb-3 !mt-0">
-                Key Takeaways
-              </h2>
-              <div className="text-gray-700 dark:text-gray-300 italic text-lg">
-                {plainExcerpt}...
-              </div>
+            {/* GEO Optimized: lead / summary */}
+            <div className="border-l-2 border-line pl-4 mb-12 text-[15px] italic text-muted">
+              {plainExcerpt}...
             </div>
 
-            <div className="text-gray-900 dark:text-gray-300 text-xl md:max-w-4xl leading-relaxed">
+            <div className="text-[16px] text-muted leading-relaxed">
               {parser(content)}
             </div>
           </div>
           {/* Sidebar with Table of Contents */}
           <aside className="lg:col-span-4 hidden lg:block">
-            <div className="sticky top-8 p-6 pt-5 rounded-2xl bg-white dark:bg-gray-900/40 backdrop-blur-sm shadow-sm transition-all hover:shadow-md">
-              <div className="text-[11px] font-black uppercase tracking-[2px] text-indigo-500 dark:text-indigo-400 mb-5 mt-0">
+            <div className="sticky top-8">
+              <div className="text-[11px] font-medium uppercase tracking-wider text-faint mb-5">
                 Table of Contents
               </div>
               <nav aria-label="Table of contents">
@@ -194,14 +186,13 @@ const BlogPost = ({ data }: post) => {
                       <a
                         href={`#${h.id}`}
                         className={`
-                          block text-sm leading-snug transition-all duration-200
+                          block text-[13px] leading-snug transition-colors
                           ${
                             h.level === 2
-                              ? "font-semibold text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-white"
-                              : "text-gray-500 dark:text-gray-500 hover:text-indigo-600 dark:hover:text-gray-200"
+                              ? "text-muted hover:text-fg"
+                              : "text-faint hover:text-muted"
                           }
-                          relative pl-3 border-l border-gray-200 dark:border-gray-800 
-                          group-hover:border-indigo-500 dark:group-hover:border-indigo-400
+                          relative pl-3 border-l border-line
                         `}
                       >
                         {" "}
@@ -216,11 +207,7 @@ const BlogPost = ({ data }: post) => {
           </aside>
         </div>
 
-        <div className="mt-16 pt-8 border-t border-gray-100 dark:border-gray-800">
-          <Projects />
-        </div>
-
-        <div className="mt-8 text-gray-900 dark:text-gray-300 text-xl md:max-w-4xl">
+        <div className="mt-16 pt-8 border-t border-line">
           <div className="giscus" />
         </div>
       </div>

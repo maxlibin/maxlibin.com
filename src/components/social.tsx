@@ -24,11 +24,11 @@ const socials: Array<social> = [
 ]
 
 const Social = () => (
-  <ul className="flex space-x-4 ml-auto pr-4 border-r border-gray-200 dark:border-gray-800">
+  <ul className="flex items-center gap-3 pr-4 border-r border-line">
     {socials.map(({ href, label, icon }) => (
       <li
         key={label}
-        className="text-gray hover:text-indigo-800 dark:text-white dark:hover:text-indigo-500 text-xl"
+        className="text-faint hover:text-fg transition-colors text-lg"
         title={label}
       >
         <a

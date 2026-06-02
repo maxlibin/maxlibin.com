@@ -158,8 +158,7 @@ const SEO = ({title, description, keywords, pathname, article, datePublished, da
       <meta name="twitter:creator" content={seo.twitterUsername} />
       
       <link rel="canonical" href={seo.url} />
-      <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🤔</text></svg>" />
-      
+
       {schemaOrgJSONLD.map((schema, index) => (
         <script
           type="application/ld+json"
