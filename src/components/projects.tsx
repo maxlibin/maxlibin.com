@@ -18,6 +18,17 @@ const projects = [
     url: "https://www.aibananaflow.com/",
   },
   {
+    id: 4,
+    title: "Tulsk",
+    platform: "Web",
+    description: `AI-native project management platform built around autonomous multi-agent clusters that self-delegate tasks, plus EMA, an always-on AI project manager that monitors workspaces, flags risk, and reports.
+
+    Native integrations with Slack, Gmail, GitHub, and Google Calendar.`,
+    coverUrl: aiBananaFlow,
+    category: "AI Project Management",
+    url: "https://tulsk.io",
+  },
+  {
     id: 1,
     title: "SG Passport Photo",
     platform: "Web",

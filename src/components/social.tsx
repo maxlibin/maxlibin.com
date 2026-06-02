@@ -2,6 +2,7 @@ import React from "react"
 import {
   AiOutlineGithub as GithubIcon,
   AiOutlineTwitter as TwitterIcon,
+  AiOutlineLinkedin as LinkedinIcon,
 } from "react-icons/ai"
 
 type social = {
@@ -20,6 +21,11 @@ const socials: Array<social> = [
     label: "Github",
     icon: <GithubIcon />,
     href: "https://github.com/maxlibin",
+  },
+  {
+    label: "LinkedIn",
+    icon: <LinkedinIcon />,
+    href: "https://linkedin.com/in/maxlibin",
   },
 ]
 
