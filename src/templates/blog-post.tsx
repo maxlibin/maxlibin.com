@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import { graphql } from "gatsby"
 import parse from "html-react-parser"
 import { Helmet } from "react-helmet"
@@ -141,6 +141,28 @@ const BlogPost = ({ data }: post) => {
     excerpt.replace(/<[^>]*>?/gm, "").slice(0, 160)
   )
 
+  // Scroll-spy: highlight the ToC entry for the section currently in view.
+  const [activeId, setActiveId] = useState("")
+  useEffect(() => {
+    const els = Array.from(
+      document.querySelectorAll(".post h2[id], .post h3[id]")
+    )
+    if (!els.length) return
+    const observer = new IntersectionObserver(
+      entries => {
+        const visible = entries.filter(e => e.isIntersecting)
+        if (!visible.length) return
+        const topmost = visible.reduce((a, b) =>
+          a.boundingClientRect.top < b.boundingClientRect.top ? a : b
+        )
+        setActiveId(topmost.target.id)
+      },
+      { rootMargin: "-80px 0px -70% 0px", threshold: 0 }
+    )
+    els.forEach(el => observer.observe(el))
+    return () => observer.disconnect()
+  }, [])
+
   return (
     <Layout>
       <div className="post">
@@ -186,10 +208,13 @@ const BlogPost = ({ data }: post) => {
                   <a
                     href={`#${h.id}`}
                     title={h.text}
-                    className={`block truncate border-l border-line pl-3 text-[13px] transition-colors ${
-                      h.level === 2
-                        ? "text-muted hover:text-fg"
-                        : "text-faint hover:text-muted"
+                    aria-current={activeId === h.id ? "location" : undefined}
+                    className={`block truncate border-l pl-3 text-[13px] transition-colors ${
+                      activeId === h.id
+                        ? "border-fg text-fg"
+                        : h.level === 2
+                        ? "border-line text-muted hover:text-fg"
+                        : "border-line text-faint hover:text-muted"
                     }`}
                   >
                     {h.text}
