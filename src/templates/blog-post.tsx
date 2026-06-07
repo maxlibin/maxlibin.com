@@ -151,66 +151,55 @@ const BlogPost = ({ data }: post) => {
           </h1>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mt-0">
-          {" "}
-          {/* Reduced mt-4 to mt-0 */}
-          {/* Main Content */}
-          <div className="lg:col-span-8">
-            {/* GEO Optimized: lead / summary */}
-            <div className="border-l-2 border-line pl-4 mb-12 text-[15px] italic text-muted">
-              {plainExcerpt}...
-            </div>
+        {/* GEO Optimized: lead / summary */}
+        <div className="border-l-2 border-line pl-4 mb-12 text-[15px] italic text-muted">
+          {plainExcerpt}...
+        </div>
 
-            <div className="text-[16px] text-muted leading-relaxed">
-              {parser(content)}
-            </div>
-          </div>
-          {/* Sidebar with Table of Contents */}
-          <aside className="lg:col-span-4 hidden lg:block">
-            <div className="sticky top-8">
-              <div className="text-[11px] font-medium uppercase tracking-wider text-faint mb-5">
-                Table of Contents
-              </div>
-              <nav aria-label="Table of contents">
-                <ul className="toc-list space-y-3">
-                  {" "}
-                  {/* Added toc-list class and reduced space-y-4 to space-y-3 */}
-                  {headings.map((h, i) => (
-                    <li
-                      key={i}
-                      className="group"
-                      style={{ marginLeft: `${(h.level - 2) * 1}rem` }}
-                    >
-                      {" "}
-                      {/* Reduced indent from 1.25rem to 1rem */}
-                      <a
-                        href={`#${h.id}`}
-                        className={`
-                          block text-[13px] leading-snug transition-colors
-                          ${
-                            h.level === 2
-                              ? "text-muted hover:text-fg"
-                              : "text-faint hover:text-muted"
-                          }
-                          relative pl-3 border-l border-line
-                        `}
-                      >
-                        {" "}
-                        {/* Reduced padding-left from pl-4 to pl-3 */}
-                        {h.text}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </nav>
-            </div>
-          </aside>
+        <div className="text-[16px] text-muted leading-relaxed">
+          {parser(content)}
         </div>
 
         <div className="mt-16 pt-8 border-t border-line">
           <div className="giscus" />
         </div>
       </div>
+
+      {/* Table of Contents — fixed in the right margin, wide screens only.
+          Kept outside .post so the prose list styles don't apply. */}
+      {headings.length > 0 && (
+        <aside
+          className="hidden xl:block fixed top-28 w-56 max-h-[70vh] overflow-y-auto"
+          style={{ left: "calc(50% + 21rem)" }}
+        >
+          <div className="text-[11px] font-medium uppercase tracking-wider text-faint mb-4">
+            Table of Contents
+          </div>
+          <nav aria-label="Table of contents">
+            <ul className="list-none m-0 space-y-2.5">
+              {headings.map((h, i) => (
+                <li
+                  key={i}
+                  className="m-0"
+                  style={{ paddingLeft: `${(h.level - 2) * 0.75}rem` }}
+                >
+                  <a
+                    href={`#${h.id}`}
+                    title={h.text}
+                    className={`block truncate border-l border-line pl-3 text-[13px] transition-colors ${
+                      h.level === 2
+                        ? "text-muted hover:text-fg"
+                        : "text-faint hover:text-muted"
+                    }`}
+                  >
+                    {h.text}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </aside>
+      )}
     </Layout>
   )
 }
