@@ -39,7 +39,7 @@
   },
   "resolutions": {
     "lmdb": "2.8.5",
-    "msgpackr": "1.10.1"
+    "msgpackr": "1.12.1"
   },
   "license": "MIT",
   "scripts": {

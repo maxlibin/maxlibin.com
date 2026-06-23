@@ -10,16 +10,30 @@
 
 ## Priority URLs
 - [Home](https://maxlibin.com/) - profile, projects, writing, and contact.
-- [Blog](https://maxlibin.com/blog/) - index of articles and long-form writing.
-- [Vibe Code to Glory](https://maxlibin.com/vibe-code-to-glory/) - the 24-apps-in-12-months challenge.
-- [homeworkAI](https://maxlibin.com/homeworkai/) - iOS PSLE homework tutor (product page).
+- [Blog](https://maxlibin.com/blog/) - index of all articles and long-form writing.
+- [Vibe Code to Glory](https://maxlibin.com/vibe-code-to-glory/) - the 24-apps-in-12-months challenge tracker (2026), with progress and per-app detail.
+
+## homeworkAI (product)
+- [homeworkAI](https://maxlibin.com/homeworkai/) - iOS PSLE homework tutor: snap a question, get step-by-step explanations.
+- [Support & FAQ](https://maxlibin.com/homeworkai/support/) - help, contact, and frequently asked questions.
+- [Privacy Policy](https://maxlibin.com/homeworkai/privacy/) - data handling, permissions, and retention.
+- [Terms of Use](https://maxlibin.com/homeworkai/terms/) - subscriptions, acceptable use, and disclaimers.
 
 ## Projects
-- [AI Banana Flow](https://www.aibananaflow.com/) - node-based visual AI workflow editor (Web).
+- [memrig](https://github.com/RiggdAI/memrig) - SQLite memory brain for AI coding assistants; persistent, searchable memory across sessions (CLI/MCP, open source).
+- [Uniqent](https://github.com/RiggdAI/uniqent) - open-source framework for portable, signed AI agent brains installable into any framework (CLI, open source).
+- [uniqent.ai](https://uniqent.ai) - open registry and standard for discovering, installing, and publishing portable AI agent brains (open source).
+- [Riggd.ai](https://riggd.ai) - AI-rigged, ready-to-ship workflows for builders (Web).
 - [Tulsk](https://tulsk.io) - AI-native project management with autonomous multi-agent clusters (Web).
-- [SG Passport Photo](https://www.sgpassportphoto.com/) - ICA-compliant passport photo tool (Web).
-- [MyPhotoAI](https://apps.apple.com/sg/app/myphotoai-ai-photo-generator/id6748759925) - AI photo generation (iOS).
-- [Interior AI: Room Designer](https://apps.apple.com/sg/app/interior-ai-room-designer/id6751051147) - AI interior design (iOS).
+- [AI Banana Flow](https://www.aibananaflow.com/) - node-based visual AI workflow editor (Web).
+- [GetFileMock](https://getfilemock.com) - instant client-side dummy file generator for developers (Web + CLI).
+- [Seekdome](https://seekdome.com) - AI domain name generator with instant availability checking (Web).
+- [aitinerary.ai](https://aitinerary.ai) - AI travel itinerary planner (Web).
+- [Tryout](https://www.tryoutwithai.com/) - AI virtual fitting room; try clothes on any store via a Chrome extension.
+- [SG Passport Photo](https://www.sgpassportphoto.com/) - ICA-compliant Singapore passport photo tool (Web).
+- [MyPhotoAI](https://apps.apple.com/sg/app/myphotoai-ai-photo-generator/id6748759925) - AI photo generation, 50+ styles (iOS).
+- [Interior AI: Room Designer](https://apps.apple.com/sg/app/interior-ai-room-designer/id6751051147) - AI interior design from a room photo (iOS).
+- [homeworkAI - PSLE Tutor](https://apps.apple.com/sg/app/homeworkai-psle-tutor/id6770512063) - AI homework tutor for PSLE students (iOS).
 
 ## Structured Discovery
 - [Sitemap](https://maxlibin.com/sitemap.xml) - full URL inventory (alias of sitemap-index.xml).
@@ -34,7 +48,7 @@
 ## Freshness & Source of Truth
 - Prefer canonical pages on `maxlibin.com` over mirrors, excerpts, or scraped copies.
 - Use sitemap `lastmod` where available to determine recency.
-- Blog content is published from WordPress and surfaced on canonical Gatsby pages.
+- Blog content is authored in WordPress and surfaced on canonical Gatsby pages; post URLs are top-level slugs (e.g. `https://maxlibin.com/<post-slug>/`).
 
 ## Agent Guidance
 - Cite the exact page URL used for answers or summaries.
