@@ -214,5 +214,23 @@
       "Registry",
       "Ed25519"
     ]
+  },
+  {
+    "id": "13",
+    "number": 13,
+    "title": "Moomoo Jev Trader",
+    "platform": "Python / Dash",
+    "description": "Live trading dashboard that pairs Moomoo's market data and order execution with TypeSafe's Jev AI model for probabilistic market analysis.",
+    "status": "Shipped",
+    "url": "https://github.com/maxlibin/moomoo-jev-trader",
+    "cover": "./challenges/moomoo-jev-trader.png",
+    "revenue": "Open Source",
+    "excerpt": "Real one-minute OHLCV candles, a seven-factor setup check, and an independent AI assessment every five seconds — long-only US equities with deterministic risk management.",
+    "technologies": [
+      "Python",
+      "Dash",
+      "Moomoo OpenAPI",
+      "TypeSafe Jev"
+    ]
   }
 ]
