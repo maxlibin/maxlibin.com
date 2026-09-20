@@ -1,0 +1,12 @@
+---
+// Titled prose block used by the homeworkAI policy/support pages.
+type Props = { title: string }
+const { title } = Astro.props
+---
+
+<section class="mb-8">
+  <h2 class="text-2xl font-bold text-fg mb-3">{title}</h2>
+  <div class="text-muted space-y-3">
+    <slot />
+  </div>
+</section>

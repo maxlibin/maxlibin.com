@@ -1,0 +1,39 @@
+---
+import { Image } from "astro:assets"
+import type { CollectionEntry } from "astro:content"
+import Row from "./Row.astro"
+import { formatDate } from "../lib/site"
+
+type Props = { post: CollectionEntry<"blog"> }
+const { post } = Astro.props
+const { title, date, excerpt, cover } = post.data
+---
+
+<Row>
+  <Fragment slot="meta">{formatDate(date, "short")}</Fragment>
+  <a href={`/${post.id}/`} class="group block">
+    <span class="block text-fg group-hover:text-muted transition-colors">
+      {title}
+      <span class="text-faint ml-1">↗</span>
+    </span>
+    {cover ? (
+      <span class="mt-3 flex overflow-hidden rounded-xl border border-line">
+        <Image
+          src={cover}
+          alt=""
+          width={288}
+          height={180}
+          loading="lazy"
+          class="w-28 sm:w-36 object-cover shrink-0"
+        />
+        <span class="flex items-center min-w-0 p-4">
+          <span class="text-[13px] text-faint line-clamp-2">{excerpt}</span>
+        </span>
+      </span>
+    ) : (
+      <span class="mt-1 text-[13px] text-faint line-clamp-1">
+        {excerpt}
+      </span>
+    )}
+  </a>
+</Row>

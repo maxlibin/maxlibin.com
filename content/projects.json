@@ -1,0 +1,52 @@
+[
+  {
+    "id": "ai-banana-flow",
+    "order": 1,
+    "title": "AI Banana Flow",
+    "platform": "Web",
+    "description": "AI Banana Flow is an AI Image Generator with Visual Flow Editor.",
+    "category": "AI Image Generation",
+    "url": "https://www.aibananaflow.com/",
+    "cover": "./projects/ai-banana-flow.png"
+  },
+  {
+    "id": "tulsk",
+    "order": 2,
+    "title": "Tulsk",
+    "platform": "Web",
+    "description": "AI-native project management platform built around autonomous multi-agent clusters that self-delegate tasks, plus EMA, an always-on AI project manager that monitors workspaces, flags risk, and reports.",
+    "category": "AI Project Management",
+    "url": "https://tulsk.io",
+    "cover": "./projects/ai-banana-flow.png"
+  },
+  {
+    "id": "sg-passport-photo",
+    "order": 3,
+    "title": "SG Passport Photo",
+    "platform": "Web",
+    "description": "A compliant Singapore Passport Photo Tool.",
+    "category": "Utility",
+    "url": "https://www.sgpassportphoto.com/",
+    "cover": "./projects/sg-passport-photo.png"
+  },
+  {
+    "id": "myphotoai",
+    "order": 4,
+    "title": "MyPhotoAI",
+    "platform": "iOS",
+    "description": "AI Photo Generator iOS App.",
+    "category": "Photography",
+    "url": "https://apps.apple.com/sg/app/myphotoai-ai-photo-generator/id6748759925",
+    "cover": "./projects/myphotoai.png"
+  },
+  {
+    "id": "interior-ai",
+    "order": 5,
+    "title": "Interior AI: Room Designer",
+    "platform": "iOS",
+    "description": "AI Interior Design iOS App.",
+    "category": "Design",
+    "url": "https://apps.apple.com/sg/app/interior-ai-room-designer/id6751051147",
+    "cover": "./projects/interior-ai.png"
+  }
+]

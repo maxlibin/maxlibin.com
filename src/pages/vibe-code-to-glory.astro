@@ -1,0 +1,173 @@
+---
+import { getCollection } from "astro:content"
+import { Image } from "astro:assets"
+import Base from "../layouts/Base.astro"
+import ChallengeDialog from "../components/ChallengeDialog.astro"
+
+const TOTAL_SLOTS = 24
+
+const challenges = await getCollection("challenges")
+const slots = Array.from({ length: TOTAL_SLOTS }, (_, i) => {
+  const number = i + 1
+  return { number, challenge: challenges.find((c) => c.data.number === number) }
+})
+const shippedCount = challenges.filter(
+  (c) => c.data.status === "Shipped"
+).length
+const progress = Math.round((shippedCount / TOTAL_SLOTS) * 100)
+---
+
+<Base
+  wide
+  title="Vibe Code to Glory - Side Projects 2026"
+  description="Tracking my journey to build 24 revenue-generating apps in 12 months using Vibe Coding."
+  pathname="/vibe-code-to-glory/"
+  breadcrumbs={[
+    { name: "Home", item: "/" },
+    { name: "Vibe Code to Glory", item: "/vibe-code-to-glory/" },
+  ]}
+>
+  <div class="mt-8 mb-16 px-4 md:px-0 relative">
+    <div class="py-8 border-b border-line mb-8">
+      <h1 class="text-3xl md:text-4xl font-semibold tracking-tight text-fg mb-3">
+        Vibe Code to Glory
+      </h1>
+      <h2 class="text-[15px] font-medium text-faint uppercase tracking-wider mb-3">
+        Side Projects 2026
+      </h2>
+      <p class="text-[15px] leading-relaxed text-muted max-w-content">
+        24 revenue-ready apps in 12 months. One independent developer. Pushing
+        the limits of the "Vibe Coding" workflow.
+      </p>
+
+      <div class="mt-8">
+        <div class="flex justify-between text-[13px] text-faint mb-2">
+          <span>
+            Progress: {shippedCount} / {TOTAL_SLOTS} Apps Shipped
+          </span>
+          <span>{progress}% Complete</span>
+        </div>
+        <div class="w-full bg-line rounded-full h-2 overflow-hidden">
+          <div
+            class="bg-fg h-2 rounded-full transition-all duration-1000 ease-out"
+            style={`width: ${progress}%`}
+          ></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+      {slots.map(({ number, challenge }) =>
+        challenge ? (
+          <div
+            role="button"
+            tabindex="0"
+            data-challenge-open={challenge.id}
+            class="relative group rounded-xl border border-line bg-surface hover:shadow-lg cursor-pointer transition-all duration-300 overflow-hidden min-h-[350px] flex flex-col"
+          >
+            {challenge.data.cover ? (
+              <>
+                <Image
+                  src={challenge.data.cover}
+                  alt={challenge.data.title}
+                  width={640}
+                  class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 z-0"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent z-10" />
+              </>
+            ) : (
+              <div class="absolute inset-0 bg-surface z-0" />
+            )}
+            <div class="relative z-20 p-6 flex-grow flex flex-col h-full w-full text-white">
+              <div class="flex justify-between items-start mb-4">
+                <div class="bg-black/40 backdrop-blur-md text-[10px] font-medium px-2.5 py-1 rounded-full uppercase tracking-wider text-white/90">
+                  {challenge.data.platform}
+                </div>
+                <div class="bg-white/15 backdrop-blur-md text-white text-[10px] font-medium px-2 py-1 rounded-full">
+                  #{number}
+                </div>
+              </div>
+              <div class="mt-auto">
+                <h3 class="text-xl font-semibold text-white mb-2 leading-tight">
+                  {challenge.data.title}
+                </h3>
+                <p class="text-[13px] text-white/70 mb-4 line-clamp-2 leading-relaxed">
+                  {challenge.data.description}
+                </p>
+                <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+                  <span class="text-[10px] font-medium px-2 py-1 rounded bg-white/15 text-white/90">
+                    {challenge.data.status}
+                  </span>
+                  <a
+                    href={challenge.data.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-[13px] font-medium text-white/90 hover:text-white flex items-center gap-1 transition-colors"
+                  >
+                    Visit Site <span class="text-lg">→</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        ) : (
+          <div class="relative rounded-xl border border-line border-dashed bg-surface/50 overflow-hidden min-h-[350px] flex flex-col">
+            <div class="flex flex-col items-center justify-center h-full p-6 text-center opacity-50 hover:opacity-100 transition-opacity relative z-10">
+              <div class="text-5xl font-semibold text-line mb-4 select-none">
+                {number}
+              </div>
+              <h3 class="text-[15px] font-medium text-faint mb-1">
+                Upcoming App
+              </h3>
+              <p class="text-[13px] text-faint">Waiting for deployment...</p>
+            </div>
+          </div>
+        )
+      )}
+    </div>
+
+    {challenges.map((challenge) => (
+      <ChallengeDialog challenge={challenge} />
+    ))}
+
+    <div class="mt-16 text-center p-8 bg-surface rounded-2xl border border-line">
+      <h3 class="text-xl font-semibold text-fg mb-3">Follow the Journey</h3>
+      <p class="text-[15px] text-muted mb-6">
+        I'm documenting the entire process of building these 24 apps.
+      </p>
+      <a
+        href="https://twitter.com/maxlibin"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center px-6 py-3 text-[15px] font-medium rounded-xl text-bg bg-fg hover:opacity-90 transition-opacity"
+      >
+        Follow on Twitter
+      </a>
+    </div>
+  </div>
+</Base>
+
+<script>
+  // Each card opens its pre-rendered <dialog>; the "Visit Site" link inside a
+  // card is a real link, so clicks on it must not open the dialog.
+  const openers = document.querySelectorAll<HTMLElement>(
+    "[data-challenge-open]"
+  )
+  for (const opener of openers) {
+    const id = opener.dataset.challengeOpen
+    const dialog = document.querySelector<HTMLDialogElement>(
+      `dialog[data-challenge-dialog="${id}"]`
+    )
+    if (!dialog) throw new Error(`No dialog for challenge ${id}`)
+    opener.addEventListener("click", (event) => {
+      if (event.target instanceof Element && event.target.closest("a")) return
+      dialog.showModal()
+    })
+    opener.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault()
+        dialog.showModal()
+      }
+    })
+  }
+</script>

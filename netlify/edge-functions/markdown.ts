@@ -1,6 +1,6 @@
 // Markdown for Agents — content negotiation.
 // When a request prefers `text/markdown`, serve the pre-generated index.md
-// (built in gatsby-node.js onPostBuild). Browsers (Accept: text/html,...) are
+// (emitted by the src/pages/**/index.md.ts endpoints). Browsers (Accept: text/html,...) are
 // untouched and get the normal HTML response.
 import type { Context } from "https://edge.netlify.com"
 

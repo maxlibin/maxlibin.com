@@ -1,0 +1,144 @@
+---
+import { Image } from "astro:assets"
+import type { CollectionEntry } from "astro:content"
+
+type Props = { challenge: CollectionEntry<"challenges"> }
+const { challenge } = Astro.props
+const {
+  number,
+  title,
+  platform,
+  description,
+  status,
+  url,
+  cover,
+  blogUrl,
+  excerpt,
+  technologies,
+} = challenge.data
+---
+
+<dialog
+  data-challenge-dialog={challenge.id}
+  class="m-auto bg-surface text-muted rounded-2xl shadow-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto border border-line p-0 backdrop:bg-black/60 backdrop:backdrop-blur-sm"
+>
+  <form method="dialog" class="flex flex-col">
+    <div class="relative h-64 sm:h-80 w-full overflow-hidden">
+      {cover ? (
+        <>
+          <Image
+            src={cover}
+            alt={title}
+            width={1024}
+            class="absolute inset-0 w-full h-full object-cover"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/60 to-transparent" />
+        </>
+      ) : (
+        <div class="absolute inset-0 bg-surface" />
+      )}
+
+      <div class="absolute inset-0 p-6 sm:p-8 flex flex-col justify-end">
+        <div class="relative z-10 text-white">
+          <div class="flex items-center gap-3 mb-2">
+            <span class="bg-white/20 backdrop-blur-md text-white text-[10px] font-medium px-2 py-0.5 rounded uppercase tracking-wider">
+              Project #{number}
+            </span>
+            <span class="bg-white/20 backdrop-blur-md text-white/90 text-[10px] font-medium px-2 py-0.5 rounded uppercase tracking-wider border border-white/10">
+              {platform}
+            </span>
+          </div>
+          <h2 class="text-2xl sm:text-3xl font-semibold text-white mb-2">
+            <a
+              href={url}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="hover:text-white/80 transition-colors"
+            >
+              {title}
+            </a>
+          </h2>
+          <p class="text-[15px] text-white/80 font-medium">{status}</p>
+        </div>
+      </div>
+
+      <button
+        type="submit"
+        aria-label="Close"
+        class="absolute top-4 right-4 z-20 text-white/70 hover:text-white bg-black/20 hover:bg-black/40 backdrop-blur-md p-2 rounded-full transition-all border border-white/10"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M6 18L18 6M6 6l12 12"
+          ></path>
+        </svg>
+      </button>
+    </div>
+
+    <div class="p-6 sm:p-8 space-y-8">
+      <div>
+        <h3 class="text-[11px] font-medium uppercase text-faint mb-3 tracking-wider">
+          About the Project
+        </h3>
+        <p class="text-muted text-[15px] leading-relaxed mb-4">{description}</p>
+        <div class="border-l-2 border-line pl-4 italic text-muted">
+          "{excerpt}"
+        </div>
+      </div>
+
+      <div>
+        <h3 class="text-[11px] font-medium uppercase text-faint mb-3 tracking-wider">
+          ✨ Vibe Stack
+        </h3>
+        <div class="flex flex-wrap gap-2">
+          {technologies.map((tech) => (
+            <span class="px-3 py-1 bg-bg text-muted rounded-full text-[13px] border border-line">
+              {tech}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row gap-4 pt-4">
+        <a
+          href={url}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex-1 inline-flex justify-center items-center px-6 py-3 text-[15px] font-medium rounded-xl text-bg bg-fg hover:opacity-90 transition-opacity"
+        >
+          Launch App ↗
+        </a>
+        {blogUrl && (
+          <a
+            href={blogUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex-1 inline-flex justify-center items-center px-6 py-3 text-[15px] font-medium rounded-xl text-fg border border-line bg-surface hover:bg-bg transition-colors"
+          >
+            Read the story
+          </a>
+        )}
+      </div>
+    </div>
+  </form>
+</dialog>
+
+<script>
+  // Close when the backdrop (the dialog element itself, outside the form) is clicked.
+  for (const dialog of document.querySelectorAll<HTMLDialogElement>(
+    "dialog[data-challenge-dialog]"
+  )) {
+    dialog.addEventListener("click", (event) => {
+      if (event.target === dialog) dialog.close()
+    })
+  }
+</script>

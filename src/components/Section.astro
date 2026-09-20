@@ -1,0 +1,13 @@
+---
+import SectionLabel from "./SectionLabel.astro"
+
+type Props = { label: string }
+const { label } = Astro.props
+---
+
+<section class="mt-14">
+  <SectionLabel>{label}</SectionLabel>
+  <div>
+    <slot />
+  </div>
+</section>

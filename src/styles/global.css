@@ -1,6 +1,18 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+/* Class-based dark mode, toggled by the inline theme script in Base.astro. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-faint: var(--faint);
+  --color-line: var(--line);
+  --container-content: 40rem;
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+}
 
 :root {
   --bg: #f8f8f7;
@@ -21,15 +33,13 @@
 }
 
 html,
-body,
-#___gatsby,
-#gatsby-focus-wrapper {
+body {
   height: 100%;
 }
 
 body {
   margin: 0px;
-  font-family: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
@@ -43,23 +53,22 @@ body {
   list-style: square;
 }
 
-.post .toc-list {
-  list-style: none !important;
-  margin: 0 !important;
-}
-
 .post ol {
   list-style: decimal;
 }
 
-.post p,
-.post .wp-block-image,
-.post .wp-block-code {
+.post p {
   margin-bottom: 28px;
+  word-wrap: break-word;
 }
 
-.post p {
-  word-wrap: break-word;
+.post img {
+  @apply rounded-lg shadow-md my-8 max-w-full h-auto;
+}
+
+.post pre {
+  @apply rounded-lg border border-line p-5 mb-7 text-sm overflow-x-auto;
+  background-color: #171513 !important;
 }
 
 .post table {
@@ -92,23 +101,19 @@ body {
 }
 
 .post h2 {
-  font-size: 28px;
-  line-height: normal;
-  margin-bottom: 20px;
-  margin-top: 40px;
+  @apply text-2xl font-semibold text-fg mt-12 mb-5;
 }
 
 .post h3 {
-  @apply text-2xl font-bold mt-8 mb-4;
+  @apply text-xl font-semibold text-fg mt-8 mb-3;
 }
 
 .post h4 {
-  @apply text-xl font-bold mt-6 mb-3;
+  @apply text-lg font-semibold text-fg mt-6 mb-3;
 }
 
-.gatsby-image-wrapper-constrained {
-  width: 100%;
-  border-radius: 8px;
+.post hr {
+  @apply my-8 border-line;
 }
 
 ::-webkit-scrollbar {
@@ -135,32 +140,4 @@ li code {
   border-radius: 4px;
   border: 1px solid var(--line);
   font-size: 0.9em;
-}
-
-.post hr {
-  @apply my-8 border-line;
-}
-
-/* line-clamp fallback (Tailwind 3.2 has no core line-clamp utilities) */
-.line-clamp-1,
-.line-clamp-2,
-.line-clamp-3 {
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-.line-clamp-1 {
-  -webkit-line-clamp: 1;
-}
-.line-clamp-2 {
-  -webkit-line-clamp: 2;
-}
-.line-clamp-3 {
-  -webkit-line-clamp: 3;
-}
-.line-clamp-1 > p,
-.line-clamp-2 > p,
-.line-clamp-3 > p {
-  display: inline;
-  margin: 0;
 }

@@ -1,11 +1,11 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/a83f0442-b740-47a7-a9a5-b15d9d6dff6c/deploy-status)](https://app.netlify.com/sites/fervent-bardeen-8e8db2/deploys)
+# maxlibin.com
 
-maxlibin.com website using gatsby and wordpress.
+Personal site built with [Astro](https://astro.build). Blog posts live as Markdown
+in `content/blog/` (see `src/content.config.ts` for the frontmatter schema).
 
-Install with:
-
-`yarn`
-
-and start with
-
-`yarn develop`
+```
+yarn          # install
+yarn dev      # local dev server
+yarn build    # production build into dist/
+yarn preview  # serve the production build
+```
