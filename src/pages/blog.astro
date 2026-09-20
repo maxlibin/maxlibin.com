@@ -1,0 +1,27 @@
+---
+import Base from "../layouts/Base.astro"
+import SectionLabel from "../components/SectionLabel.astro"
+import PostRow from "../components/PostRow.astro"
+import { getPostsNewestFirst } from "../lib/posts"
+
+const posts = await getPostsNewestFirst()
+---
+
+<Base
+  title="Blog | Insights, Tutorials, and Guides for Developers"
+  description="Explore our blog for the latest insights, tutorials, and guides on web development, vibe coding, AI-powered tools, and innovative technologies. Stay updated with expert knowledge and practical tips."
+  pathname="/blog/"
+  breadcrumbs={[
+    { name: "Home", item: "/" },
+    { name: "Blog", item: "/blog/" },
+  ]}
+>
+  <div class="mt-4">
+    <SectionLabel>Writing</SectionLabel>
+    <div>
+      {posts.map((post) => (
+        <PostRow post={post} />
+      ))}
+    </div>
+  </div>
+</Base>

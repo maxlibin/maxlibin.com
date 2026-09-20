@@ -1,0 +1,13 @@
+---
+// ReadCV-style row: a narrow faint meta column on the left (date / years /
+// platform / label) and the primary content on the right.
+---
+
+<div class="flex gap-4 sm:gap-8 py-3 border-b border-line last:border-b-0">
+  <div class="w-24 sm:w-28 shrink-0 text-[13px] leading-6 text-faint tabular-nums">
+    <slot name="meta" />
+  </div>
+  <div class="flex-1 min-w-0 text-[15px] leading-6 text-fg">
+    <slot />
+  </div>
+</div>

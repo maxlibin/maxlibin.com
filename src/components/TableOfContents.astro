@@ -1,0 +1,70 @@
+---
+import type { MarkdownHeading } from "astro"
+
+type Props = { headings: MarkdownHeading[] }
+const { headings } = Astro.props
+---
+
+<!-- Fixed in the right margin on wide screens only. Kept outside .post so the
+     prose list styles don't apply. -->
+<aside
+  class="hidden xl:block fixed top-28 w-56 max-h-[70vh] overflow-y-auto"
+  style="left: calc(50% + 21rem)"
+>
+  <div class="text-[11px] font-medium uppercase tracking-wider text-faint mb-4">
+    Table of Contents
+  </div>
+  <nav aria-label="Table of contents">
+    <ul class="list-none m-0 space-y-2.5">
+      {headings.map((h) => (
+        <li class="m-0" style={`padding-left: ${(h.depth - 2) * 0.75}rem`}>
+          <a
+            href={`#${h.slug}`}
+            title={h.text}
+            data-toc-link={h.slug}
+            class:list={[
+              "block truncate border-l pl-3 text-[13px] transition-colors border-line",
+              "aria-[current=location]:border-fg aria-[current=location]:text-fg",
+              h.depth === 2
+                ? "text-muted hover:text-fg"
+                : "text-faint hover:text-muted",
+            ]}
+          >
+            {h.text}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </nav>
+</aside>
+
+<script>
+  // Scroll-spy: mark the ToC entry for the section currently in view.
+  const links = Array.from(
+    document.querySelectorAll<HTMLAnchorElement>("[data-toc-link]")
+  )
+  const sections = Array.from(
+    document.querySelectorAll<HTMLElement>(".post h2[id], .post h3[id]")
+  )
+
+  const setActive = (id: string) => {
+    for (const link of links) {
+      if (link.dataset.tocLink === id)
+        link.setAttribute("aria-current", "location")
+      else link.removeAttribute("aria-current")
+    }
+  }
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      const visible = entries.filter((e) => e.isIntersecting)
+      if (visible.length === 0) return
+      const topmost = visible.reduce((a, b) =>
+        a.boundingClientRect.top < b.boundingClientRect.top ? a : b
+      )
+      setActive(topmost.target.id)
+    },
+    { rootMargin: "-80px 0px -70% 0px", threshold: 0 }
+  )
+  sections.forEach((el) => observer.observe(el))
+</script>

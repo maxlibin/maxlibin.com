@@ -1,3 +1,10 @@
+[build]
+  command = "yarn build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"
+
 [[redirects]]
   from = "/side-project-to-glory"
   to = "/vibe-code-to-glory"

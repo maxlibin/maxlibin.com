@@ -1,0 +1,218 @@
+[
+  {
+    "id": "1",
+    "number": 1,
+    "title": "GetFileMock.com",
+    "platform": "Web + CLI",
+    "description": "Instant, client-side dummy file generator for developers. Create 1GB+ test files in seconds without uploading data.",
+    "status": "Shipped",
+    "url": "https://getfilemock.com",
+    "cover": "./challenges/getfilemock-com.png",
+    "revenue": "Pre-Revenue",
+    "blogUrl": "https://maxlibin.com/from-vibe-to-glory-launching-my-first-2026-app-in-under-4-hours/",
+    "excerpt": "It’s a specific kind of pain. You’re building a file upload feature. You need to test if your backend correctly rejects a 50MB PDF. You need to see if your frontend handles a corrupted PNG without crashing... Where do you get these files? You scavenge. GetFileMock.com is the solution.",
+    "technologies": [
+      "OpenAI Codex",
+      "Claude Opus 4.5",
+      "React",
+      "Vite",
+      "Web Workers"
+    ]
+  },
+  {
+    "id": "2",
+    "number": 2,
+    "title": "Seekdome.com",
+    "platform": "Web",
+    "description": "Find the perfect domain with AI. Search, generate, and analyze your next brand with intelligent domain suggestions and instant availability checking.",
+    "status": "Shipped",
+    "url": "https://seekdome.com",
+    "cover": "./challenges/seekdome-com.png",
+    "revenue": "Pre-Revenue",
+    "excerpt": "Finding the perfect domain name is often the hardest part of launching a new project. Seekdome uses AI to generate creative, brandable domain names based on your input, instantly checks availability across multiple TLDs, and helps you analyze and compare options to find your ideal digital identity.",
+    "technologies": [
+      "OpenAI Codex",
+      "Next.js",
+      "AI/GPT",
+      "Domain APIs"
+    ]
+  },
+  {
+    "id": "3",
+    "number": 3,
+    "title": "Tryout",
+    "platform": "Chrome Extension",
+    "description": "Try on clothes without fitting. Upload a photo, browse any online store, and instantly see yourself wearing any item. Experience the future of shopping with our AI-powered virtual fitting room.",
+    "status": "Shipped",
+    "url": "https://www.tryoutwithai.com/",
+    "cover": "./challenges/tryout.png",
+    "revenue": "Pre-Revenue",
+    "excerpt": "Try on clothes without fitting. Browse any online store and instantly see yourself wearing any item using AI.",
+    "technologies": [
+      "OpenAI Codex",
+      "Next.js",
+      "Chrome extension",
+      "Cursor",
+      "Claude Code"
+    ]
+  },
+  {
+    "id": "4",
+    "number": 4,
+    "title": "aitinerary.ai",
+    "platform": "Web",
+    "description": "AI travel planning assistant for building personalized itineraries in minutes.",
+    "status": "Shipped",
+    "url": "https://aitinerary.ai",
+    "cover": "./challenges/aitinerary-ai.png",
+    "revenue": "Pre-Revenue",
+    "excerpt": "aitinerary.ai helps travelers turn ideas into complete trip plans with AI-guided itinerary generation and fast editing.",
+    "technologies": [
+      "Codex",
+      "OpenClaw",
+      "Antigravity"
+    ]
+  },
+  {
+    "id": "5",
+    "number": 5,
+    "title": "Tulsk.io",
+    "platform": "Web",
+    "description": "AI-powered project management and team collaboration platform for planning, prioritizing, and shipping with an AI cofounder.",
+    "status": "Shipped",
+    "url": "https://tulsk.io",
+    "cover": "./challenges/tulsk-io.png",
+    "revenue": "Pre-Revenue",
+    "excerpt": "Turn messy ideas into clear plans with 24/7 AI-powered insights and expert support, so ideas become shippable work faster.",
+    "technologies": [
+      "Next.js",
+      "OpenAI Codex",
+      "OpenClaw",
+      "Claude Code"
+    ]
+  },
+  {
+    "id": "6",
+    "number": 6,
+    "title": "MyPhotoAI",
+    "platform": "iOS",
+    "description": "AI Photo Generator iOS App. Turn words into art in seconds with 50+ styles, photo remixing, and gallery-worthy AI image creation.",
+    "status": "Shipped",
+    "url": "https://apps.apple.com/sg/app/myphotoai-ai-photo-generator/id6748759925",
+    "cover": "./challenges/myphotoai.webp",
+    "revenue": "Pre-Revenue",
+    "excerpt": "MyPhotoAI lets you turn words into art in seconds. Explore 50+ styles, remix photos, and create gallery-worthy images with the power of AI. Whether you're a designer, content creator, or just exploring your imagination, MyPhotoAI makes visual creation effortless.",
+    "technologies": [
+      "Swift",
+      "SwiftUI",
+      "Claude Code",
+      "OpenAI Codex"
+    ]
+  },
+  {
+    "id": "7",
+    "number": 7,
+    "title": "Interior AI Room Designer",
+    "platform": "iOS",
+    "description": "AI-powered interior design app. Snap a photo of any room and instantly reimagine it in dozens of styles, from modern minimalist to cozy boho.",
+    "status": "Shipped",
+    "url": "https://apps.apple.com/sg/app/interior-ai-room-designer/id6751051147",
+    "cover": "./challenges/interior-ai-room-designer.webp",
+    "revenue": "Pre-Revenue",
+    "excerpt": "Interior AI Room Designer turns any room photo into a beautifully restyled space in seconds. Explore styles, swap furniture vibes, and visualize your next redesign before lifting a finger — perfect for homeowners, renters, and designers chasing inspiration.",
+    "technologies": [
+      "Swift",
+      "SwiftUI",
+      "Claude Code",
+      "OpenAI Codex"
+    ]
+  },
+  {
+    "id": "8",
+    "number": 8,
+    "title": "Riggd.ai",
+    "platform": "Web",
+    "description": "AI-powered platform for creators and builders to launch faster with smart, ready-to-ship workflows.",
+    "status": "Shipped",
+    "url": "https://riggd.ai",
+    "cover": "./challenges/riggd-ai.jpg",
+    "revenue": "Pre-Revenue",
+    "excerpt": "Riggd.ai helps you go from idea to shipped with AI-rigged workflows that handle the heavy lifting so you can focus on building what matters.",
+    "technologies": [
+      "Next.js",
+      "OpenAI Codex",
+      "Claude Code"
+    ]
+  },
+  {
+    "id": "9",
+    "number": 9,
+    "title": "HomeworkAI - PSLE Tutor",
+    "platform": "iOS",
+    "description": "AI homework tutor for PSLE students. Snap a question and get step-by-step explanations across Math, Science, and English.",
+    "status": "Shipped",
+    "url": "https://apps.apple.com/sg/app/homeworkai-psle-tutor/id6770512063",
+    "cover": "./challenges/homeworkai-psle-tutor.webp",
+    "revenue": "Pre-Revenue",
+    "excerpt": "HomeworkAI turns homework stress into clear, guided learning. Snap a question, get step-by-step explanations, and build real understanding — purpose-built for PSLE students tackling Math, Science, and English.",
+    "technologies": [
+      "Swift",
+      "SwiftUI",
+      "Claude Code",
+      "OpenAI Codex"
+    ]
+  },
+  {
+    "id": "10",
+    "number": 10,
+    "title": "memrig",
+    "platform": "CLI / MCP",
+    "description": "SQLite memory brain for AI coding assistants — persistent, searchable memory that survives sessions, with private and shared team knowledge.",
+    "status": "Shipped",
+    "url": "https://github.com/RiggdAI/memrig",
+    "revenue": "Open Source",
+    "excerpt": "AI assistants forget everything between sessions. memrig gives them a searchable SQLite brain — remember, recall, share — so context compounds instead of evaporating.",
+    "technologies": [
+      "TypeScript",
+      "SQLite",
+      "MCP",
+      "Claude Code"
+    ]
+  },
+  {
+    "id": "11",
+    "number": 11,
+    "title": "Uniqent",
+    "platform": "CLI / Framework",
+    "description": "Open-source framework for portable AI agent brains. Package an agent's persona, skills, memory, and MCP servers into one signed .uniqent bundle, installable into any framework.",
+    "status": "Shipped",
+    "url": "https://github.com/RiggdAI/uniqent",
+    "cover": "./challenges/uniqent.jpg",
+    "revenue": "Open Source",
+    "excerpt": "An agent's intelligence is trapped in whatever framework built it. Uniqent packages the whole brain into a portable, signed file — build once, deploy anywhere.",
+    "technologies": [
+      "TypeScript",
+      "MCP",
+      "Ed25519",
+      "Claude Code"
+    ]
+  },
+  {
+    "id": "12",
+    "number": 12,
+    "title": "uniqent.ai",
+    "platform": "Registry",
+    "description": "Open registry and standard for portable AI agent brains — discover, install, and publish signed agents that run across any framework. Like a Docker Hub for agents.",
+    "status": "Shipped",
+    "url": "https://uniqent.ai",
+    "cover": "./challenges/uniqent-ai.jpg",
+    "revenue": "Open Source",
+    "excerpt": "Pick a brain, install it, and the whole agent is live — persona, skills, memory, and MCP servers included.",
+    "technologies": [
+      "TypeScript",
+      "MCP",
+      "Registry",
+      "Ed25519"
+    ]
+  }
+]

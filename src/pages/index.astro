@@ -1,0 +1,157 @@
+---
+import { getCollection } from "astro:content"
+import Base from "../layouts/Base.astro"
+import Avatar from "../components/Avatar.astro"
+import Section from "../components/Section.astro"
+import Row from "../components/Row.astro"
+import PostRow from "../components/PostRow.astro"
+import { getPostsNewestFirst } from "../lib/posts"
+import { site } from "../lib/site"
+
+const description =
+  "AI Engineer & Founder based in Singapore. 16+ years shipping web products — 12 years scaling Ahrefs' frontend, now building AI products solo from concept to paying users. Building 24 revenue-generating apps in 12 months."
+
+const keywords =
+  "ai engineer, founder, software developer, singapore, react, nextjs, typescript, ocaml, rescript, llm, multi-agent, vibe coding, indie maker, max li, max li bin"
+
+const experience = [
+  { org: "Ahrefs", role: "Frontend Software Engineer", years: "2014 — 2026" },
+  { org: "Tangoshark", role: "Frontend Developer", years: "2012 — 2014" },
+  {
+    org: "Earlier roles",
+    role: "Frontend & Web Development",
+    years: "2008 — 2012",
+  },
+]
+
+const education = [
+  { school: "React Nanodegree", org: "Udacity", years: "2017 — 2018" },
+  {
+    school: "Adv. Diploma, Multimedia Design",
+    org: "First Media Design School",
+    years: "2006 — 2008",
+  },
+]
+
+const contacts = [
+  {
+    label: "X / Twitter",
+    value: "@maxlibin",
+    href: "https://twitter.com/maxlibin",
+  },
+  { label: "GitHub", value: "maxlibin", href: "https://github.com/maxlibin" },
+  {
+    label: "LinkedIn",
+    value: "in/maxlibin",
+    href: "https://linkedin.com/in/maxlibin",
+  },
+  { label: "Email", value: "me@maxlibin.com", href: "mailto:me@maxlibin.com" },
+]
+
+const posts = (await getPostsNewestFirst()).slice(0, 7)
+const projects = (await getCollection("projects")).sort((a, b) => a.data.order - b.data.order)
+---
+
+<Base description={description} keywords={keywords} pathname="/">
+  <div class="mt-4">
+    <Avatar size={72} />
+    <h1 class="mt-5 text-lg font-medium text-fg">Max Li</h1>
+    <p class="text-[15px] text-faint">AI Engineer &amp; Founder · Singapore</p>
+    <p class="mt-5 text-[15px] leading-relaxed text-muted">
+      Engineer and builder with 16+ years shipping web products end to end. I
+      spent 12 years scaling Ahrefs' frontend (used by millions), and now build
+      AI products solo from concept to paying users. I'm on a{" "}
+      <a
+        href="/vibe-code-to-glory/"
+        class="text-fg underline decoration-line underline-offset-2 hover:decoration-fg"
+      >
+        Vibe Code to Glory
+      </a>{" "}
+      journey — shipping 24 revenue-ready apps in 12 months.
+    </p>
+  </div>
+
+  <Section label="Writing">
+    {posts.map((post) => (
+      <PostRow post={post} />
+    ))}
+    <div class="pt-4">
+      <a
+        href="/blog/"
+        class="text-[13px] text-faint hover:text-fg transition-colors"
+      >
+        All writing →
+      </a>
+    </div>
+  </Section>
+
+  <Section label="Projects">
+    {projects.map(({ data: project }) => (
+      <Row>
+        <Fragment slot="meta">{project.platform}</Fragment>
+        <a
+          href={project.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-fg hover:text-muted transition-colors"
+        >
+          {project.title}
+          <span class="text-faint ml-1">↗</span>
+        </a>
+        <span class="text-faint"> — {project.category}</span>
+      </Row>
+    ))}
+    {projects.map(({ data: project }) => (
+      <script
+        type="application/ld+json"
+        set:html={JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "SoftwareApplication",
+          name: project.title,
+          description: project.description,
+          applicationCategory: project.category,
+          operatingSystem: project.platform,
+          url: project.url,
+          author: { "@type": "Person", name: site.author },
+        })}
+      ></script>
+    ))}
+  </Section>
+
+  <Section label="Experience">
+    {experience.map(({ org, role, years }) => (
+      <Row>
+        <Fragment slot="meta">{years}</Fragment>
+        <span class="text-fg">{org}</span>
+        <span class="text-faint"> — {role}</span>
+      </Row>
+    ))}
+  </Section>
+
+  <Section label="Education">
+    {education.map(({ school, org, years }) => (
+      <Row>
+        <Fragment slot="meta">{years}</Fragment>
+        <span class="text-fg">{school}</span>
+        <span class="text-faint"> — {org}</span>
+      </Row>
+    ))}
+  </Section>
+
+  <Section label="Contact">
+    {contacts.map(({ label, value, href }) => (
+      <Row>
+        <Fragment slot="meta">{label}</Fragment>
+        <a
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-fg hover:text-muted transition-colors"
+        >
+          {value}
+          <span class="text-faint ml-1">↗</span>
+        </a>
+      </Row>
+    ))}
+  </Section>
+</Base>

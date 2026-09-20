@@ -1,0 +1,48 @@
+---
+// Circular headshot from /avatar.jpg with the live Singapore time-of-day emoji
+// shown as a small speech-bubble badge at the top-right (mirrors the dynamic
+// favicon).
+type Props = { size: number }
+const { size } = Astro.props
+---
+
+<div
+  class="relative inline-block"
+  style={{ width: `${size}px`, height: `${size}px` }}
+>
+  <div class="w-full h-full rounded-full overflow-hidden bg-surface border border-line flex items-center justify-center">
+    <img
+      src="/avatar.jpg"
+      alt="Max Li"
+      width={size}
+      height={size}
+      class="w-full h-full object-cover"
+    />
+  </div>
+
+  <div class="absolute -top-2.5 -right-2.5">
+    <div
+      class="relative flex items-center justify-center bg-surface border border-line rounded-full shadow-sm rotate-12"
+      style="width: 30px; height: 30px"
+    >
+      <span
+        id="avatar-status"
+        role="img"
+        aria-label="current status"
+        class="-rotate-12"
+        style="font-size: 16px; line-height: 1"
+      >
+        🟢
+      </span>
+      <span class="absolute -bottom-1 left-2 w-2.5 h-2.5 bg-surface border-b border-r border-line rotate-45"></span>
+    </div>
+  </div>
+</div>
+
+<script>
+  import { getSgtEmoji } from "../lib/timeEmoji"
+
+  const status = document.getElementById("avatar-status")
+  if (!status) throw new Error("Avatar: #avatar-status not found")
+  status.textContent = getSgtEmoji()
+</script>
