@@ -1,0 +1,200 @@
+---
+import Base from "../../layouts/Base.astro"
+import DocSection from "../../components/DocSection.astro"
+
+const CONTACT_EMAIL = "me@maxlibin.com"
+const EFFECTIVE_DATE = "24 September 2026"
+---
+
+<Base
+  title="ZhouYi Master AI — Privacy Policy"
+  description="What ZhouYi Master AI keeps on your iPhone, what it sends to Yi Master, and who processes it. No accounts, no ads, no trackers."
+  pathname="/zhouyi-master-ai/privacy/"
+  breadcrumbs={[
+    { name: "Home", item: "/" },
+    { name: "ZhouYi Master AI", item: "/zhouyi-master-ai/" },
+    { name: "Privacy Policy", item: "/zhouyi-master-ai/privacy/" },
+  ]}
+>
+  <article class="mt-8 mb-16 px-4 md:px-0 max-w-3xl">
+    <div class="mb-3 text-sm">
+      <a href="/zhouyi-master-ai/" class="text-fg hover:underline">
+        ← ZhouYi Master AI
+      </a>
+    </div>
+    <h1 class="text-4xl font-extrabold text-fg mb-2">Privacy Policy</h1>
+    <p class="text-sm text-faint mb-10">Effective {EFFECTIVE_DATE}</p>
+
+    <DocSection title="The short version">
+      <p>
+        ZhouYi Master AI is a Yijing (I Ching) reflection app for iPhone. We
+        collect as little as we can and we don't sell anything.
+      </p>
+      <ul class="list-disc pl-6 space-y-1">
+        <li>No account, no sign-up, no email required to use the app.</li>
+        <li>
+          No advertising SDKs, no analytics SDKs, no third-party trackers in the
+          app.
+        </li>
+        <li>
+          Your readings, journal, conversations, and profile stay on your
+          device.
+        </li>
+        <li>
+          When you talk with Yi Master, your message and the context it needs
+          are sent to our server only to write the reply.
+        </li>
+      </ul>
+    </DocSection>
+
+    <DocSection title="Who runs the app">
+      <p>
+        ZhouYi Master AI ("we", "us", "the app") is an independent product built
+        and operated by Max Li Bin (Singapore). Contact:{" "}
+        <a href={`mailto:${CONTACT_EMAIL}`} class="text-fg hover:underline">
+          {CONTACT_EMAIL}
+        </a>
+        .
+      </p>
+    </DocSection>
+
+    <DocSection title="What stays on your device">
+      <p>The following never leaves your iPhone:</p>
+      <ul class="list-disc pl-6 space-y-1">
+        <li>Your coin casts, readings, and journal.</li>
+        <li>Your saved conversations with Yi Master.</li>
+        <li>
+          Your profile, including birth date and gender, which are never sent
+          anywhere.
+        </li>
+        <li>
+          Motion sensor readings used to toss the coins, which are processed on
+          the device and not stored.
+        </li>
+      </ul>
+      <p>
+        These are stored using Apple's standard on-device storage. They are
+        included in your iCloud device backup only if you have iCloud backup
+        enabled in iOS. Deleting the app removes them.
+      </p>
+    </DocSection>
+
+    <DocSection title="What is sent when you talk with Yi Master">
+      <p>
+        When you send a message to Yi Master, the app sends the following to our
+        backend (a Cloudflare Worker we operate) so it can write a reply:
+      </p>
+      <ul class="list-disc pl-6 space-y-1">
+        <li>Your message and the recent turns of that conversation.</li>
+        <li>A reading you chose to attach, if any.</li>
+        <li>
+          The profile fields you filled in: name, situation, goals, and
+          concerns.
+        </li>
+      </ul>
+      <p>
+        Our backend passes this to DeepSeek's API to generate the reply and
+        streams it back to you. We do not store your messages on our server.
+        DeepSeek processes the request under its own privacy policy and may
+        process it outside your country, including in the People's Republic of
+        China.
+      </p>
+      <p>
+        If our server cannot be reached and your iPhone supports Apple
+        Intelligence, the reply is written by Apple's on-device model instead,
+        and nothing is sent.
+      </p>
+    </DocSection>
+
+    <DocSection title="Install identifier and credits">
+      <p>
+        The app creates a random identifier for this installation and keeps it
+        in your iPhone's Keychain. Our server uses it to keep your Yi Master
+        balance: how many replies you have used, their token counts and cost,
+        and which subscription, if any, this installation is linked to. It is
+        not linked to your name, email, or Apple Account.
+      </p>
+    </DocSection>
+
+    <DocSection title="Subscriptions">
+      <p>
+        Payments are handled entirely by Apple. When you subscribe or restore
+        purchases, the app sends Apple's signed transaction record (transaction
+        identifiers, product, renewal date, and whether it is a test purchase)
+        to our server, which checks Apple's signature and refills your monthly
+        replies. We never see your payment details, full name, or Apple Account.
+      </p>
+    </DocSection>
+
+    <DocSection title="IP address and logs">
+      <p>
+        Your IP address is used to enforce a daily request limit. It is kept
+        only in a counter that expires at the end of the day (UTC).
+      </p>
+      <p>
+        Our server keeps short-lived operational logs (for example request
+        events and error messages) so we can keep the service running. These
+        logs do not contain your messages and are not used for advertising or
+        sold to anyone.
+      </p>
+    </DocSection>
+
+    <DocSection title="Analytics and tracking">
+      <p>
+        We do not embed advertising SDKs, analytics SDKs, or third-party
+        trackers in the app. We do not use the IDFA. We do not build a profile
+        of you.
+      </p>
+    </DocSection>
+
+    <DocSection title="Children">
+      <p>
+        ZhouYi Master AI is not directed at children under 13, and we do not
+        knowingly collect personal information from them. If you believe a child
+        has sent personal information through the app, email{" "}
+        <a href={`mailto:${CONTACT_EMAIL}`} class="text-fg hover:underline">
+          {CONTACT_EMAIL}
+        </a>{" "}
+        and we will delete it.
+      </p>
+    </DocSection>
+
+    <DocSection title="Data retention">
+      <p>
+        On-device data lives until you delete it in the app or delete the app.
+        Your credit balance and reply records are kept on our server while the
+        service runs, so your balance and subscription keep working. Email us to
+        request their deletion.
+      </p>
+    </DocSection>
+
+    <DocSection title="Your rights">
+      <p>
+        Depending on where you live, you may have the right to access, correct,
+        delete, or restrict processing of your personal data, and to lodge a
+        complaint with a data protection authority. Email{" "}
+        <a href={`mailto:${CONTACT_EMAIL}`} class="text-fg hover:underline">
+          {CONTACT_EMAIL}
+        </a>{" "}
+        and we'll respond within a reasonable time.
+      </p>
+    </DocSection>
+
+    <DocSection title="Changes to this policy">
+      <p>
+        We may update this Privacy Policy from time to time. We'll change the
+        effective date above and, for material changes, surface a notice in the
+        app.
+      </p>
+    </DocSection>
+
+    <DocSection title="Contact">
+      <p>
+        Questions about this policy?{" "}
+        <a href={`mailto:${CONTACT_EMAIL}`} class="text-fg hover:underline">
+          {CONTACT_EMAIL}
+        </a>
+      </p>
+    </DocSection>
+  </article>
+</Base>

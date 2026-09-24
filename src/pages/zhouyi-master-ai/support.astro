@@ -1,0 +1,125 @@
+---
+import Base from "../../layouts/Base.astro"
+import DocSection from "../../components/DocSection.astro"
+
+const CONTACT_EMAIL = "me@maxlibin.com"
+const APP_STORE_URL = "https://apps.apple.com/app/id6815581151"
+
+const faqs = [
+  {
+    question: "How do I cancel my subscription?",
+    answer:
+      "Subscriptions are managed by Apple. On your iPhone, open Settings → tap your name → Subscriptions → ZhouYi Master AI Monthly → Cancel Subscription. Your replies keep working until the end of the current billing period.",
+  },
+  {
+    question: "I subscribed on another device. How do I get it here?",
+    answer:
+      "In the app, tap the profile icon at the top right of Yi Master, tap Subscribe, then Restore Purchases. Make sure you're signed in with the same Apple Account you used to subscribe. Every device on that subscription shares the same monthly replies.",
+  },
+  {
+    question: 'What does "about 3,700 replies a month" mean?',
+    answer:
+      "Each month's allowance covers about 3,700 typical Yi Master replies. Longer conversations and attached readings use a little more per reply. Unused replies don't carry over to the next month.",
+  },
+  {
+    question: "Yi Master says my replies are used up.",
+    answer:
+      "If you haven't subscribed, your free replies are used up and you can subscribe from the card in the chat. If you have, this month's replies are used up; they refresh on the date shown in your profile. Your draft and conversations are kept either way.",
+  },
+  {
+    question: "Does the app work offline?",
+    answer:
+      "Casting coins, reading the hexagrams, and your journal work offline. Yi Master needs an internet connection; on iPhones with Apple Intelligence it answers with Apple's on-device model when our server can't be reached.",
+  },
+  {
+    question: "Does Yi Master predict the future?",
+    answer:
+      "No. Yi Master helps you reflect on a reading and on your situation. It is not medical, psychological, legal, or financial advice.",
+  },
+  {
+    question: "How do I delete my data?",
+    answer:
+      "Your readings, journal, conversations, and profile are stored on your iPhone; deleting the app removes them. To delete the credit records kept on our server, email us.",
+  },
+]
+---
+
+<Base
+  title="ZhouYi Master AI — Support"
+  description="Get help with ZhouYi Master AI. FAQ, subscription management, and how to reach us."
+  pathname="/zhouyi-master-ai/support/"
+  breadcrumbs={[
+    { name: "Home", item: "/" },
+    { name: "ZhouYi Master AI", item: "/zhouyi-master-ai/" },
+    { name: "Support", item: "/zhouyi-master-ai/support/" },
+  ]}
+  faqs={faqs}
+>
+  <article class="mt-8 mb-16 px-4 md:px-0 max-w-3xl">
+    <div class="mb-3 text-sm">
+      <a href="/zhouyi-master-ai/" class="text-fg hover:underline">
+        ← ZhouYi Master AI
+      </a>
+    </div>
+    <h1 class="text-4xl font-extrabold text-fg mb-2">Support</h1>
+    <p class="text-muted mb-10 max-w-2xl">
+      The fastest way to get help is to email us. We read every message.
+    </p>
+
+    <DocSection title="Contact">
+      <p>
+        Email{" "}
+        <a
+          href={`mailto:${CONTACT_EMAIL}?subject=ZhouYi%20Master%20AI%20support`}
+          class="text-fg hover:underline font-semibold"
+        >
+          {CONTACT_EMAIL}
+        </a>{" "}
+        with:
+      </p>
+      <ul class="list-disc pl-6 space-y-1">
+        <li>What you were trying to do.</li>
+        <li>What you saw instead.</li>
+        <li>Your iPhone model and iOS version (if relevant).</li>
+        <li>A screenshot or screen recording (if you have one).</li>
+      </ul>
+      <p>We aim to reply within 2 business days.</p>
+    </DocSection>
+
+    <DocSection title="FAQ">
+      <div class="space-y-5">
+        {faqs.map((f) => (
+          <div class="border-b border-line pb-4">
+            <h3 class="font-semibold text-fg mb-1">{f.question}</h3>
+            <p class="text-muted">{f.answer}</p>
+          </div>
+        ))}
+      </div>
+    </DocSection>
+
+    <DocSection title="Useful links">
+      <ul class="list-disc pl-6 space-y-1">
+        <li>
+          <a
+            href={APP_STORE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-fg hover:underline"
+          >
+            ZhouYi Master AI on the App Store
+          </a>
+        </li>
+        <li>
+          <a href="/zhouyi-master-ai/privacy/" class="text-fg hover:underline">
+            Privacy Policy
+          </a>
+        </li>
+        <li>
+          <a href="/zhouyi-master-ai/terms/" class="text-fg hover:underline">
+            Terms of Use
+          </a>
+        </li>
+      </ul>
+    </DocSection>
+  </article>
+</Base>
