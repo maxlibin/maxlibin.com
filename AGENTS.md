@@ -6,7 +6,7 @@ This repository is an Astro-based personal site. Content is file-based; there is
 - `content/blog/<slug>.md`: blog posts (frontmatter: `title`, `date`, `modified`, `excerpt`, optional `cover`). Images for a post sit in `content/blog/<slug>/` and are referenced relatively.
 - `content/projects.json`, `content/challenges.json`: data for the homepage Projects section and the Vibe Code to Glory page; their images live in `content/projects/` and `content/challenges/`.
 - `src/content.config.ts`: collection schemas (zod) for the three collections above.
-- `src/pages/`: routes (`index.astro`, `blog.astro`, `[slug].astro` for posts at the site root, `vibe-code-to-glory.astro`, `homeworkai/*`). `*.md.ts` endpoints emit the Markdown-for-Agents variants.
+- `src/pages/`: routes (`index.astro`, `blog.astro`, `[slug].astro` for posts at the site root, `vibe-code-to-glory.astro`, `forward-deployed-engineer.astro`, `homeworkai/*`). `*.md.ts` endpoints emit the Markdown-for-Agents variants.
 - `src/layouts/Base.astro`: `<head>` (SEO meta + JSON-LD, theme/favicon bootstrap scripts, GA), header and main column.
 - `src/components/`: `.astro` UI components; client behaviour is plain `<script>` blocks, no UI framework.
 - `src/lib/`: site metadata, SEO helpers, collection queries, Markdown-for-Agents text.
