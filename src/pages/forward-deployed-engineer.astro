@@ -1,0 +1,247 @@
+---
+import Base from "../layouts/Base.astro"
+
+const strengths = [
+  {
+    title: "Customer discovery",
+    description:
+      "Understand the workflow, constraints, and business outcome before choosing what to build.",
+  },
+  {
+    title: "Hands-on delivery",
+    description:
+      "Prototype quickly, write production code, integrate systems, and own the path to deployment.",
+  },
+  {
+    title: "AI product engineering",
+    description:
+      "Turn capable models into focused products with practical interfaces, guardrails, and feedback loops.",
+  },
+  {
+    title: "End-to-end ownership",
+    description:
+      "Work across product decisions, frontend, APIs, mobile apps, deployment, and iteration.",
+  },
+]
+
+const process = [
+  {
+    number: "01",
+    title: "Learn the real workflow",
+    description:
+      "Talk with users, observe how work gets done, and identify the bottleneck behind the feature request.",
+  },
+  {
+    number: "02",
+    title: "Prove value quickly",
+    description:
+      "Build the smallest useful pilot, put it in users’ hands, and validate the riskiest assumptions early.",
+  },
+  {
+    number: "03",
+    title: "Deploy for real",
+    description:
+      "Connect the necessary systems, handle edge cases, and turn the successful prototype into reliable software.",
+  },
+  {
+    number: "04",
+    title: "Measure and improve",
+    description:
+      "Stay close to users after launch, measure the outcome, and feed what I learn back into the product.",
+  },
+]
+
+const projects = [
+  {
+    title: "Tulsk",
+    type: "AI project management",
+    description:
+      "An AI-native project management platform built around autonomous multi-agent collaboration and an always-on AI project manager.",
+    href: "https://tulsk.io",
+  },
+  {
+    title: "HomeworkAI",
+    type: "AI education · iOS",
+    description:
+      "A PSLE-focused tutor that turns a photographed question into guided, step-by-step explanations across Math, Science, and English.",
+    href: "https://apps.apple.com/sg/app/homeworkai-psle-tutor/id6770512063",
+  },
+  {
+    title: "AI Banana Flow",
+    type: "AI image generation",
+    description:
+      "A visual flow editor that makes complex AI image-generation workflows easier to build and use.",
+    href: "https://www.aibananaflow.com/",
+  },
+  {
+    title: "SG Passport Photo",
+    type: "Consumer utility",
+    description:
+      "A focused product that translates Singapore passport-photo requirements into a simple user workflow.",
+    href: "https://www.sgpassportphoto.com/",
+  },
+]
+---
+
+<Base
+  title="Forward-Deployed Engineer | Max Li"
+  description="Max Li is a hands-on AI engineer in Singapore who turns complex customer problems into practical, production-ready software."
+  keywords="forward deployed engineer, FDE, AI engineer, customer engineering, product engineer, Singapore, Max Li"
+  pathname="/forward-deployed-engineer/"
+  breadcrumbs={[
+    { name: "Home", item: "/" },
+    {
+      name: "Forward-Deployed Engineer",
+      item: "/forward-deployed-engineer/",
+    },
+  ]}
+>
+  <article class="mt-4">
+    <header class="pb-10 border-b border-line">
+      <p class="text-[13px] font-medium uppercase tracking-wider text-faint mb-4">
+        Forward-Deployed Engineer
+      </p>
+      <h1 class="text-3xl md:text-4xl font-semibold tracking-tight text-fg leading-tight">
+        Turning difficult customer problems into software that works.
+      </h1>
+      <p class="mt-5 text-[16px] leading-relaxed text-muted">
+        I’m Max Li, an AI engineer and product builder based in Singapore. I
+        bring 16+ years of engineering experience—including 12 years scaling
+        Ahrefs’ frontend—and a hands-on approach to taking products from an
+        ambiguous idea to a deployed application.
+      </p>
+      <p class="mt-4 text-[15px] leading-relaxed text-muted">
+        I’m interested in forward-deployed engineering roles where I can work
+        directly with customers, understand their operations, and build the
+        right solution alongside them.
+      </p>
+      <div class="mt-7 flex flex-wrap gap-3">
+        <a
+          href="mailto:me@maxlibin.com?subject=Forward-Deployed%20Engineer"
+          class="inline-flex items-center rounded-lg bg-fg px-4 py-2.5 text-[14px] font-medium text-bg hover:opacity-85 transition-opacity"
+        >
+          Start a conversation
+        </a>
+        <a
+          href="https://linkedin.com/in/maxlibin"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center rounded-lg border border-line bg-surface px-4 py-2.5 text-[14px] font-medium text-fg hover:border-faint transition-colors"
+        >
+          LinkedIn ↗
+        </a>
+      </div>
+    </header>
+
+    <section class="py-10 border-b border-line">
+      <h2 class="text-xl font-semibold text-fg mb-6">What I bring</h2>
+      <div class="grid sm:grid-cols-2 gap-x-8 gap-y-7">
+        {strengths.map((strength) => (
+          <div>
+            <h3 class="text-[15px] font-medium text-fg mb-1.5">
+              {strength.title}
+            </h3>
+            <p class="text-[14px] leading-relaxed text-muted">
+              {strength.description}
+            </p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section class="py-10 border-b border-line">
+      <h2 class="text-xl font-semibold text-fg mb-2">How I would work</h2>
+      <p class="text-[14px] leading-relaxed text-muted mb-7">
+        Forward-deployed work starts with the outcome, not the technology.
+      </p>
+      <div>
+        {process.map((step) => (
+          <div class="grid grid-cols-[2.5rem_1fr] gap-3 py-5 border-t border-line first:border-t-0 first:pt-0">
+            <span class="text-[12px] font-medium text-faint pt-0.5">
+              {step.number}
+            </span>
+            <div>
+              <h3 class="text-[15px] font-medium text-fg mb-1">{step.title}</h3>
+              <p class="text-[14px] leading-relaxed text-muted">
+                {step.description}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section class="py-10 border-b border-line">
+      <h2 class="text-xl font-semibold text-fg mb-2">Representative work</h2>
+      <p class="text-[14px] leading-relaxed text-muted mb-7">
+        Products I have shipped across AI, web, and mobile.
+      </p>
+      <div class="space-y-6">
+        {projects.map((project) => (
+          <div>
+            <div class="flex flex-wrap items-baseline gap-x-2 mb-1.5">
+              <h3 class="text-[15px] font-medium text-fg">
+                <a
+                  href={project.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="hover:text-muted transition-colors"
+                >
+                  {project.title} <span class="text-faint">↗</span>
+                </a>
+              </h3>
+              <span class="text-[12px] text-faint">{project.type}</span>
+            </div>
+            <p class="text-[14px] leading-relaxed text-muted">
+              {project.description}
+            </p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section class="py-10 border-b border-line">
+      <p class="text-[12px] font-medium uppercase tracking-wider text-faint mb-3">
+        Example engagement
+      </p>
+      <h2 class="text-xl font-semibold text-fg mb-4">
+        Improving operations for a childcare school
+      </h2>
+      <div class="text-[14px] leading-relaxed text-muted space-y-4">
+        <p>
+          Suppose teachers spend hours recording attendance, meals, naps, and
+          parent updates across paper forms and disconnected tools. I would
+          first observe the daily workflow and speak with teachers and
+          administrators to find where time is actually being lost.
+        </p>
+        <p>
+          I could then build a focused pilot: a tablet-friendly activity log,
+          teacher-approved AI summaries for parents, and secure access for each
+          family. After testing it at one location, I would use staff feedback
+          and time-saved measurements to improve the product before a wider
+          rollout.
+        </p>
+        <p class="text-faint">
+          This is an illustration of my approach, not a completed client
+          engagement.
+        </p>
+      </div>
+    </section>
+
+    <section class="py-10">
+      <h2 class="text-2xl font-semibold tracking-tight text-fg">
+        Have a difficult workflow to solve?
+      </h2>
+      <p class="mt-3 text-[15px] leading-relaxed text-muted">
+        I’m open to forward-deployed engineering opportunities and conversations
+        with teams building ambitious AI products.
+      </p>
+      <a
+        href="mailto:me@maxlibin.com?subject=Forward-Deployed%20Engineer"
+        class="inline-block mt-5 text-[15px] font-medium text-fg underline decoration-line underline-offset-4 hover:decoration-fg"
+      >
+        me@maxlibin.com →
+      </a>
+    </section>
+  </article>
+</Base>
