@@ -12,6 +12,7 @@
 - [Home](https://maxlibin.com/) - profile, projects, writing, and contact.
 - [Blog](https://maxlibin.com/blog/) - index of all articles and long-form writing.
 - [Vibe Code to Glory](https://maxlibin.com/vibe-code-to-glory/) - the 24-apps-in-12-months challenge tracker (2026), with progress and per-app detail.
+- [Forward-Deployed Engineer](https://maxlibin.com/forward-deployed-engineer/) - how Max's hands-on engineering, AI product work, and end-to-end delivery map to forward-deployed engineering roles, with shipped products and contact options.
 
 ## homeworkAI (product)
 - [homeworkAI](https://maxlibin.com/homeworkai/) - iOS PSLE homework tutor: snap a question, get step-by-step explanations.
