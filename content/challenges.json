@@ -232,5 +232,23 @@
       "Moomoo OpenAPI",
       "TypeSafe Jev"
     ]
+  },
+  {
+    "id": "14",
+    "number": 14,
+    "title": "Jev Rubik's",
+    "platform": "Web",
+    "description": "Interactive 3D Rubik's cube where code solves and TypeSafe's Jev AI coaches your hand solves.",
+    "status": "Shipped",
+    "url": "https://github.com/maxlibin/jev-rubiks",
+    "cover": "./challenges/jev-rubiks.jpg",
+    "revenue": "Open Source",
+    "excerpt": "Turn the cube by hand, solve it instantly with Kociemba, or learn step by step while Jev watches each move and decides when to celebrate progress, warn about mistakes, or offer help.",
+    "technologies": [
+      "TypeScript",
+      "Three.js",
+      "TypeSafe Jev",
+      "Kociemba"
+    ]
   }
 ]
