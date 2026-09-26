@@ -14,6 +14,7 @@ This repository is an Astro-based personal site. Content is file-based; there is
 - `public/`: static files copied as-is (icons, `avatar.jpg`, `robots.txt`, `llms.txt`, `files/` attachments).
 - `netlify/edge-functions/markdown.ts`, `netlify.toml`: serves `index.md` on `Accept: text/markdown`, redirects, headers.
 - `scripts/import-wordpress.mjs`: the one-off importer that produced `content/blog/` from the old WordPress site.
+- `.github/workflows/build.yml`: CI that runs `yarn install --immutable`, `yarn astro check` and `yarn build` on PRs and pushes to `master`.
 - `dist/`: generated build output (do not edit manually).
 
 ## Build, Test, and Development Commands
