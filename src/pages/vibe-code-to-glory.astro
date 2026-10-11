@@ -18,7 +18,6 @@ const progress = Math.round((shippedCount / TOTAL_SLOTS) * 100)
 ---
 
 <Base
-  wide
   title="Vibe Code to Glory - Side Projects 2026"
   description="Tracking my journey to build 24 revenue-generating apps in 12 months using Vibe Coding."
   pathname="/vibe-code-to-glory/"
@@ -56,7 +55,7 @@ const progress = Math.round((shippedCount / TOTAL_SLOTS) * 100)
       </div>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
       {slots.map(({ number, challenge }) =>
         challenge ? (
           <div
