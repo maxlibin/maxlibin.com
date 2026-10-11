@@ -64,10 +64,11 @@ Engineer and builder with 16+ years shipping web products end to end. Spent 12 y
 
 ## Projects
 - [AI Banana Flow](https://www.aibananaflow.com/) — node-based visual AI workflow editor (Web)
-- [Tulsk](https://tulsk.io) — AI-native project management with autonomous multi-agent clusters (Web)
+- [Tulsk](https://tulsk.io) — full AI agent with tools, memory, its own cloud computer, and a Mac app (Web)
 - [SG Passport Photo](https://www.sgpassportphoto.com/) — ICA-compliant passport photo tool (Web)
-- [MyPhotoAI](https://apps.apple.com/sg/app/myphotoai-ai-photo-generator/id6748759925) — AI photo generation (iOS)
+- [HomeworkAI: PSLE Tutor](https://apps.apple.com/sg/app/homeworkai-psle-tutor/id6770512063) — AI homework tutor for PSLE students (iOS)
 - [Interior AI: Room Designer](https://apps.apple.com/sg/app/interior-ai-room-designer/id6751051147) — AI interior design (iOS)
+- [Zhouyi Master AI](https://apps.apple.com/sg/app/zhouyi-master-ai/id6815581151) — I Ching reflection with an AI guide (iOS)
 
 ## Writing
 ${postListMarkdown(posts)}

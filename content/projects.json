@@ -14,8 +14,8 @@
     "order": 2,
     "title": "Tulsk",
     "platform": "Web",
-    "description": "AI-native project management platform built around autonomous multi-agent clusters that self-delegate tasks, plus EMA, an always-on AI project manager that monitors workspaces, flags risk, and reports.",
-    "category": "AI Project Management",
+    "description": "Full AI agent that works for you around the clock: chat with it, give it tasks, and it uses tools, runs on its own cloud computer, remembers context, and acts from Slack, Telegram, WhatsApp, schedules, and your Mac.",
+    "category": "AI Agent",
     "url": "https://tulsk.io",
     "cover": "./projects/ai-banana-flow.png"
   },
@@ -30,14 +30,14 @@
     "cover": "./projects/sg-passport-photo.png"
   },
   {
-    "id": "myphotoai",
+    "id": "homeworkai-psle-tutor",
     "order": 4,
-    "title": "MyPhotoAI",
+    "title": "HomeworkAI: PSLE Tutor",
     "platform": "iOS",
-    "description": "AI Photo Generator iOS App.",
-    "category": "Photography",
-    "url": "https://apps.apple.com/sg/app/myphotoai-ai-photo-generator/id6748759925",
-    "cover": "./projects/myphotoai.png"
+    "description": "AI homework tutor iOS App for PSLE students.",
+    "category": "Education",
+    "url": "https://apps.apple.com/sg/app/homeworkai-psle-tutor/id6770512063",
+    "cover": "./projects/homeworkai-psle-tutor.webp"
   },
   {
     "id": "interior-ai",
@@ -48,5 +48,15 @@
     "category": "Design",
     "url": "https://apps.apple.com/sg/app/interior-ai-room-designer/id6751051147",
     "cover": "./projects/interior-ai.png"
+  },
+  {
+    "id": "zhouyi-master-ai",
+    "order": 6,
+    "title": "Zhouyi Master AI",
+    "platform": "iOS",
+    "description": "I Ching iOS App for reflection with an AI guide.",
+    "category": "Reference",
+    "url": "https://apps.apple.com/sg/app/zhouyi-master-ai/id6815581151",
+    "cover": "./projects/zhouyi-master-ai.jpg"
   }
 ]

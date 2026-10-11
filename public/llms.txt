@@ -25,7 +25,7 @@
 - [Uniqent](https://github.com/RiggdAI/uniqent) - open-source framework for portable, signed AI agent brains installable into any framework (CLI, open source).
 - [uniqent.ai](https://uniqent.ai) - open registry and standard for discovering, installing, and publishing portable AI agent brains (open source).
 - [Riggd.ai](https://riggd.ai) - AI-rigged, ready-to-ship workflows for builders (Web).
-- [Tulsk](https://tulsk.io) - AI-native project management with autonomous multi-agent clusters (Web).
+- [Tulsk](https://tulsk.io) - full AI agent with tools, memory, its own cloud computer, and a Mac app; acts from chat, Slack, Telegram, WhatsApp, and schedules (Web, macOS).
 - [AI Banana Flow](https://www.aibananaflow.com/) - node-based visual AI workflow editor (Web).
 - [GetFileMock](https://getfilemock.com) - instant client-side dummy file generator for developers (Web + CLI).
 - [Seekdome](https://seekdome.com) - AI domain name generator with instant availability checking (Web).
@@ -35,6 +35,7 @@
 - [MyPhotoAI](https://apps.apple.com/sg/app/myphotoai-ai-photo-generator/id6748759925) - AI photo generation, 50+ styles (iOS).
 - [Interior AI: Room Designer](https://apps.apple.com/sg/app/interior-ai-room-designer/id6751051147) - AI interior design from a room photo (iOS).
 - [homeworkAI - PSLE Tutor](https://apps.apple.com/sg/app/homeworkai-psle-tutor/id6770512063) - AI homework tutor for PSLE students (iOS).
+- [Zhouyi Master AI](https://apps.apple.com/sg/app/zhouyi-master-ai/id6815581151) - I Ching app: cast hexagrams, read all 64 texts, and reflect with an AI guide (iOS).
 
 ## Structured Discovery
 - [Sitemap](https://maxlibin.com/sitemap.xml) - full URL inventory (alias of sitemap-index.xml).
