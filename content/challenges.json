@@ -250,5 +250,42 @@
       "TypeSafe Jev",
       "Kociemba"
     ]
+  },
+  {
+    "id": "15",
+    "number": 15,
+    "title": "Zhouyi Master AI",
+    "platform": "iOS",
+    "description": "I Ching app for reflection. Cast hexagrams with virtual coins, read all 64 with their traditional texts, and talk a situation through with an AI guide.",
+    "status": "Shipped",
+    "url": "https://apps.apple.com/sg/app/zhouyi-master-ai/id6815581151",
+    "cover": "./challenges/zhouyi-master-ai.jpg",
+    "revenue": "Pre-Revenue",
+    "blogUrl": "https://maxlibin.com/zhouyi-master-ai-i-ching-app-launch/",
+    "excerpt": "Flick your iPhone to toss three coins, read the classic text and line-by-line readings, then ask Yi Master to help you separate what is happening from what you fear. A tool for reflection, not fortune-telling, and private by default.",
+    "technologies": [
+      "Swift",
+      "SwiftUI",
+      "Claude Code",
+      "OpenAI Codex"
+    ]
+  },
+  {
+    "id": "16",
+    "number": 16,
+    "title": "Tulsk for Mac",
+    "platform": "macOS",
+    "description": "Tulsk on your desktop. Press ⌥Space in any app to ask about what's on your screen, see what your agents need in the menu bar, and get notified when they're done.",
+    "status": "Shipped",
+    "url": "https://tulsk.io/download",
+    "cover": "./challenges/tulsk-desktop.jpg",
+    "revenue": "Pre-Revenue",
+    "excerpt": "Share a project folder from the menu bar and chat can read, edit and run commands there, with your approval, in a sandbox with no internet. Turn on Calendar or Reminders and it can plan your day too. Same account, same plan as the web app.",
+    "technologies": [
+      "Tauri",
+      "Rust",
+      "Claude Code",
+      "OpenAI Codex"
+    ]
   }
 ]
