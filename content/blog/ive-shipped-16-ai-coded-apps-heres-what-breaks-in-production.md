@@ -1,7 +1,7 @@
 ---
 title: "I've Shipped 16 AI-Coded Apps This Year. Here's What Breaks in Production"
 date: "2026-10-14T09:00:00+08:00"
-modified: "2026-10-14T09:00:00+08:00"
+modified: 2026-10-14T09:00:00+08:00
 excerpt: "I'm 16 apps into my Vibe Code to Glory challenge — shipping 24 revenue-ready apps solo in 12 months. Three consistent failure modes have emerged in every AI-generated codebase. Here's what breaks, and why 16 years of experience matters more than ever."
 ---
 
