@@ -1,6 +1,8 @@
 ---
 title: "16 Apps, Zero QA Team: How I Test AI-Generated Code in Production"
 date: "2026-10-12"
+modified: 2026-10-12
+excerpt: "16 apps, roughly 47,000 lines of AI-generated code, and zero QA team. Here is the testing strategy I built, broke, and rebuilt over ten months of shipping vibe-coded apps to production — smoke tests, monitoring, canary users, and the tests that died along the way."
 tags: ["vibe-coding", "testing", "solo-founder", "production", "quality", "ai-assisted-development", "devops"]
 ---
 
