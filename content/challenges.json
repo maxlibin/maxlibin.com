@@ -305,5 +305,22 @@
       "Blender",
       "Claude Code"
     ]
+  },
+  {
+    "id": "18",
+    "number": 18,
+    "title": "file-peek",
+    "platform": "Claude Code Plugin",
+    "description": "A file picker for Claude Code's @ mentions with a live info panel that shows what you are about to attach.",
+    "status": "Shipped",
+    "url": "https://github.com/maxlibin/claude-file-peek",
+    "cover": "./challenges/file-peek.png",
+    "revenue": "Open Source",
+    "excerpt": "Arrow through a folder and the panel beside the list describes the highlighted entry: a block-character thumbnail and dimensions for images, page count for PDFs, the first lines of text files, and git state. Press p for macOS Quick Look, Enter to drop it into the prompt as an @ mention.",
+    "technologies": [
+      "TypeScript",
+      "Claude Code",
+      "macOS Quick Look"
+    ]
   }
 ]
