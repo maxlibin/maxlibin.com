@@ -287,5 +287,23 @@
       "Claude Code",
       "OpenAI Codex"
     ]
+  },
+  {
+    "id": "17",
+    "number": 17,
+    "title": "Living Room Fish Tank",
+    "platform": "Web (WebGPU)",
+    "description": "A live, realistic 3D aquarium in a living room, rendered in the browser with three.js WebGPU and Blender.",
+    "status": "Shipped",
+    "url": "https://maxlibin.com/living-room-fish-tank/",
+    "cover": "./challenges/living-room-fish-tank.jpg",
+    "revenue": "Free / Open Source",
+    "excerpt": "132 fish of 8 species school, hide behind wood and push through plants, seen through real-time refraction in the glass and water. The surface ripples and casts caustics, and the room is lit in Blender Cycles. Built over a weekend with Claude Code and Blender.",
+    "technologies": [
+      "three.js",
+      "WebGPU",
+      "Blender",
+      "Claude Code"
+    ]
   }
 ]

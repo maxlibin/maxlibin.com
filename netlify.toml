@@ -17,6 +17,14 @@
   to = "/sitemap-index.xml"
   status = 200
 
+# The fish tank is deployed as its own Netlify site (github.com/maxlibin/threejs-fish-tank),
+# built with base "/living-room-fish-tank/", so its 349 MB of assets stay out of this repo.
+[[redirects]]
+  from = "/living-room-fish-tank/*"
+  to = "https://REPLACE-WITH-FISH-TANK-SITE.netlify.app/:splat"
+  status = 200
+  force = true
+
 # RFC 8288 Link headers for agent discovery + content-negotiation hints.
 [[headers]]
   for = "/*"
