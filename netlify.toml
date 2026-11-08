@@ -21,7 +21,7 @@
 # built with base "/living-room-fish-tank/", so its 349 MB of assets stay out of this repo.
 [[redirects]]
   from = "/living-room-fish-tank/*"
-  to = "https://REPLACE-WITH-FISH-TANK-SITE.netlify.app/:splat"
+  to = "https://living-room-fish-tank.netlify.app/:splat"
   status = 200
   force = true
 
